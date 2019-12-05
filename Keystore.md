@@ -1,6 +1,7 @@
 # Keystore 
 
-A keystore is a repository where private keys, certificates and symmetric keys can be stored.
+A keystore is a repository where private keys, certificates and symmetric keys can be stored. [KeyStore Explorer](https://keystore-explorer.org/) is an open source GUI replacement for the Java command-line utilities keytool and jarsigner.
+
 
 ## How to create a self-signed certificate using java keytool
 
