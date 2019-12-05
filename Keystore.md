@@ -9,12 +9,12 @@ A keystore is a repository where private keys, certificates and symmetric keys c
 keytool -genkeypair -keystore mykeystore.jks -storetype pkcs12 -dname "CN=localhost, OU=Unknown, 
   O=Unknown, L=Unknown, ST=Unknown, C=Unknown" -keypass password123 -storepass password123 
   -keyalg RSA -sigalg SHA1withRSA -keysize 2048 -alias mykeyAlias 
-  -ext SAM=DNS:localhost,IP:127.0.0.1 -validity 365
+  -ext SAN=DNS:localhost,IP:127.0.0.1 -validity 365
 ```
 ## How to create a seceret key 
 
 ```
-keytool -genseckey -alias aes128key -keyalgn AES -keysize 128 -keystore mykeystore.jks 
+keytool -genseckey -alias aes128key -keyalg AES -keysize 128 -keystore mykeystore.jks 
 -storepass password123 -storetype pkcs12
 ```
 
