@@ -8,17 +8,3 @@ Wagon Runner is an approach to deploy the junit test cases into the application 
 
 To reiterate Wagon Runner is not a framework to learn but it is an approach to run the unit test cases inside the application server with the JUnit framework.
 
-## What Wagon Runner Does not DO
- * It does not receive any http request from the browser
- * It does not validate http response status code or content for any request.
-
-## Application code
-
-```
-public Employee getEmployee(HttpRequest request, HttpResponse response) throws IOException {
-  String id = request.getParameter('id');
-  EmployeeDAO employeeDAO = new EmployeeDAOImpl();
-  Employee employee = employeeDAO.getEmployeeById(id);
-  return employee;
-}
-```
