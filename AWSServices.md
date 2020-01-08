@@ -312,7 +312,8 @@ Amazon WorkSpaces is a fully managed, secure desktop computing service that runs
 ### Amazon AppStream 2.0
 Amazon AppStream 2.0 is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to any device running a web browser, without rewriting them.
 
-### Internet of Things
+## Internet of Things
+### AWS IoT
 AWS IoT is a managed cloud platform that lets connected devices easily and securely interact with cloud applications and other devices.
 
 ### AWS Greengrass
