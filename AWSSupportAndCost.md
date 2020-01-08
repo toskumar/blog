@@ -20,6 +20,8 @@
   - **AWS Budgets** gives you the ability to set custom budgets that alert you when your costs or usage exceed (or are forecasted to exceed) your budgeted amount.
 
   - **The Reserved Instance** Utilization and Coverage reports are available out-of-the-box in AWS Cost Explorer. Using these reports, you can set custom RI utilization and coverage targets, visualize how well you are tracking towards your goals, and access information associated with your savings as compared to On-Demand prices.
+  
+  - **AWS Simple Monthly Calculator** You can estimate your monthly bill using the AWS Simple Monthly Calculator.
 
 ## AWS TCO (Total Cost of Ownership)
   - AWS helps you reduce Total Cost of Ownership (TCO) by reducing the need to invest in large capital expenditures and providing a pay-as-you-go model that empowers you to invest in the capacity you need and use it only when the business requires it. 
