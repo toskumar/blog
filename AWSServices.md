@@ -201,7 +201,9 @@ AWS Key Management Service (KMS) is a managed service that makes it easy for you
 AWS Organizations allows you to create groups of AWS accounts that you can use to more easily manage security and automation settings.
 
 ### AWS Shield
-AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards web applications running on AWS.
+AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards web applications running on AWS. 
+  - Standard Shield, free for all users
+  - Advanced Shield, is a paid service 
 
 ### AWS WAF
 AWS WAF is a web application firewall that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources.
