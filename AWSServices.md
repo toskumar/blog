@@ -192,7 +192,7 @@ AWS Certificate Manager is a service that lets you easily provision, manage, and
 ### AWS CloudHSM
 AWS CloudHSM service helps you meet corporate, contractual, and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS Cloud.
 
-### AWS Directory Servic
+### AWS Directory Service
 AWS Directory Service for Microsoft Active Directory (Enterprise Edition), also known as AWS Microsoft AD, enables your directory-aware workloads and AWS resources to use managed Active Directory in the AWS Cloud.
 
 ### AWS KMS (Key Management Service)
