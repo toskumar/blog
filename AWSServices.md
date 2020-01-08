@@ -6,6 +6,7 @@
   - [Networking and Content Delivery](#networking-and-content-delivery)
   - [Developer Tools](#developer-tools)
   - [Management Tools](#management-tools)
+  - [Security, Identity, and Compliance](#security-identity-and-compliance)
 
 ## Compute
 
@@ -153,7 +154,7 @@ AWS Config is a fully managed service that provides you with an AWS resource inv
 ### AWS OpsWorks
 AWS OpsWorks is a configuration management service that uses Chef, an automation platform that treats server configurations as code.
 
-### AWS Service Catalo
+### AWS Service Catalog
 AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
 
 ### AWS Trusted Advisor 
@@ -164,3 +165,16 @@ AWS Personal Health Dashboard provides alerts and remediation guidance when AWS 
 
 ### AWS Managed Services
 AWS Managed Services provides ongoing management of your AWS infrastructure so you can focus on your applications.
+
+## Security, Identity, and Compliance
+### Amazon Cloud Directory
+Amazon Cloud Directory enables you to build flexible, cloud-native directories for organizing hierarchies of data along multiple dimensions.
+
+### AWS IAM (Identity and Access Management) 
+AWS IAM enables you to securely control access to AWS services and resources for your users.
+
+### Amazon Inspector 
+Amazon Inspector is an automated security assessment service that helps improve the security and compliance of applications deployed on AWS.
+
+### AWS Certificate Manager
+AWS Certificate Manager is a service that lets you easily provision, manage, and deploy Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services.
