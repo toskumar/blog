@@ -14,6 +14,7 @@
   - [Business Productivity](#business-productivity)
   - [Desktop & App Streaming](#desktop--app-streaming)
   - [Internet of Things](#internet-of-things)
+  - [Game Development](#game-development)
 
 ## Compute
 
