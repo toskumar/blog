@@ -7,6 +7,7 @@
   - [Developer Tools](#developer-tools)
   - [Management Tools](#management-tools)
   - [Security, Identity, and Compliance](#security-identity-and-compliance)
+  - [Analytics](#analytics)
 
 ## Compute
 
@@ -178,3 +179,52 @@ Amazon Inspector is an automated security assessment service that helps improve 
 
 ### AWS Certificate Manager
 AWS Certificate Manager is a service that lets you easily provision, manage, and deploy Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificates for use with AWS services.
+
+### AWS CloudHSM
+AWS CloudHSM service helps you meet corporate, contractual, and regulatory compliance requirements for data security by using dedicated Hardware Security Module (HSM) appliances within the AWS Cloud.
+
+### AWS Directory Servic
+AWS Directory Service for Microsoft Active Directory (Enterprise Edition), also known as AWS Microsoft AD, enables your directory-aware workloads and AWS resources to use managed Active Directory in the AWS Cloud.
+
+### AWS KMS (Key Management Service)
+AWS Key Management Service (KMS) is a managed service that makes it easy for you to create and control the encryption keys used to encrypt your data.
+
+### AWS Organizations
+AWS Organizations allows you to create groups of AWS accounts that you can use to more easily manage security and automation settings.
+
+### AWS Shield
+AWS Shield is a managed Distributed Denial of Service (DDoS) protection service that safeguards web applications running on AWS.
+
+### AWS WAF
+AWS WAF is a web application firewall that helps protect your web applications from common web exploits that could affect application availability, compromise security, or consume excessive resources.
+
+## Analytics
+### Amazon Athena
+Amazon Athena is an interactive query service that makes it easy to analyze data in Amazon S3 using standard SQL. Athena is serverless, so there is no infrastructure to manage.
+
+### Amazon EMR
+Amazon EMR provides a managed Hadoop framework that makes it easy, fast, and costeffective to process vast amounts of data across dynamically scalable EC2 instances.
+
+### Amazon CloudSearch
+Amazon CloudSearch is a managed service in the AWS Cloud that makes it simple and costeffective to set up, manage, and scale a search solution for your website or application.
+
+### Amazon Elasticsearch
+Amazon Elasticsearch Service makes it easy to deploy, operate, and scale Elasticsearch for log analytics, full text search, application monitoring, and more.
+
+### Amazon Kinesis
+Amazon Kinesis is a platform for streaming data on AWS, offering powerful services to make it easy to load and analyze streaming data, and also providing the ability for you to build custom streaming data applications for specialized needs.
+  - **Amazon Kinesis Firehose** is the easiest way to load streaming data into AWS
+  - **Amazon Kinesis Analytics** is the easiest way to process streaming data in real time with standard SQL
+  - **Amazon Kinesis Streams** enables you to build custom applications that process or analyze streaming data for specialized needs
+
+### Amazon Redshift
+Amazon Redshift is a fast, fully managed, petabyte-scale data warehouse that makes it simple and cost-effective to analyze all your data using your existing business intelligence tools.
+
+### Amazon QuickSight
+Amazon QuickSight is a fast, cloud-powered business analytics service that makes it easy to build visualizations, perform ad-hoc analysis, and quickly get business insights from your data.
+
+### AWS Data Pipeline
+AWS Data Pipeline is a web service that helps you reliably process and move data between different AWS compute and storage services, as well as on-premises data sources, at specified intervals.
+
+
+
