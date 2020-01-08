@@ -12,8 +12,8 @@
   - [Mobile Services](#mobile-services)
   - [Application Services](#application-services)
   - [Business Productivity](#business-productivity)
-  - [Desktop & App Streaming](#desktop-app-streaming)
-  - [Internet of Things](internet-of-things)
+  - [Desktop & App Streaming](#desktop--app-streaming)
+  - [Internet of Things](#internet-of-things)
 
 ## Compute
 
