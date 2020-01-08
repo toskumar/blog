@@ -22,6 +22,8 @@ EC2 is a web service that provides secure, resizable compute capacity in the clo
 - **Instance Types**
    - On-Demand Instance
    - Reserved Instance
+     - Standard Reserved Instance
+     - Convertible Reserved Instance
    - Spot Instance 
    - Dedicated Instance
 
