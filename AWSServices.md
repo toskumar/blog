@@ -3,8 +3,9 @@
   - [Storage](#storage)
   - [Database](#database)
   - [Migration](#migration)
-  - [Network and Content Delivery](#network-and-content-delivery)
+  - [Networking and Content Delivery](#networking-and-content-delivery)
   - [Developer Tools](#developer-tools)
+  - [Management Tools](#management-tools)
 
 ## Compute
 
@@ -133,8 +134,33 @@ AWS CodePipeline is a continuous integration and continuous delivery service for
 ### AWS X-Ray 
 AWS X-Ray helps developers analyze and debug distributed applications in production or under development, such as those built using a microservices architecture.
 
+## Management Tools
+### Amazon CloudWatch 
+Amazon CloudWatch is a monitoring service for AWS Cloud resources and the applications you run on AWS.
 
+### Amazon EC2 Systems Manager
+Amazon EC2 Systems Manager is a management service that helps you automatically collect software inventory, apply operating system (OS) patches, create system images, and configure Windows and Linux operating systems.
 
+### AWS CloudFormation
+AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources.
 
+### AWS CloudTrail
+AWS CloudTrail is a web service that records AWS API calls for your account and delivers log files to you.
 
+### AWS Config 
+AWS Config is a fully managed service that provides you with an AWS resource inventory, configuration history, and configuration change notifications to enable security and governance.
 
+### AWS OpsWorks
+AWS OpsWorks is a configuration management service that uses Chef, an automation platform that treats server configurations as code.
+
+### AWS Service Catalo
+AWS Service Catalog allows organizations to create and manage catalogs of IT services that are approved for use on AWS.
+
+### AWS Trusted Advisor 
+AWS Trusted Advisor is an online resource to help you reduce cost, increase performance, and improve security by optimizing your AWS environment.
+
+### AWS Personal Health Dashboard
+AWS Personal Health Dashboard provides alerts and remediation guidance when AWS is experiencing events that might affect you.
+
+### AWS Managed Services
+AWS Managed Services provides ongoing management of your AWS infrastructure so you can focus on your applications.
