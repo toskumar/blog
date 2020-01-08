@@ -8,6 +8,12 @@
   - [Management Tools](#management-tools)
   - [Security, Identity, and Compliance](#security-identity-and-compliance)
   - [Analytics](#analytics)
+  - [Artificial Intelligence](#artificial-intelligence)
+  - [Mobile Services](#mobile-services)
+  - [Application Services](#application-services)
+  - [Business Productivity](#business-productivity)
+  - [Desktop & App Streaming](#desktop-app-streaming)
+  - [Internet of Things](internet-of-things)
 
 ## Compute
 
@@ -226,5 +232,96 @@ Amazon QuickSight is a fast, cloud-powered business analytics service that makes
 ### AWS Data Pipeline
 AWS Data Pipeline is a web service that helps you reliably process and move data between different AWS compute and storage services, as well as on-premises data sources, at specified intervals.
 
+### AWS Glue
+AWS Glue is a fully managed ETL service that makes it easy to move data between your data stores.
+
+## Artificial Intelligence
+### Amazon Lex
+Amazon Lex is a service for building conversational interfaces into any application using voice
+and text.
+
+### Amazon Polly
+Amazon Polly is a service that turns text into lifelike speech.
+
+### Amazon Rekognition
+Amazon Rekognition is a service that makes it easy to add image analysis to your applications.
+
+### Amazon ML (Machine Learning)
+Amazon Machine Learning is a service that makes it easy for developers of all skill levels to use machine learning technology.
+
+## Mobile Services
+### AWS Mobile Hub 
+AWS Mobile Hub provides an integrated console experience that you can use to quickly create and configure powerful mobile app backend features and integrate them into your mobile app.
+
+### Amazon Cognito
+Amazon Cognito lets you easily add user sign-up and sign-in to your mobile and web apps.
+
+### Amazon Pinpoint
+Amazon Pinpoint makes it easy to run targeted campaigns to drive user engagement in mobile apps.
+
+### AWS Device Farm
+AWS Device Farm is an app testing service that lets you test and interact with your Android, iOS, and web apps on many devices at once, or reproduce issues on a device in real time.
+
+### AWS Mobile SDK
+The AWS Mobile SDK helps you build high quality mobile apps quickly and easily.
+
+### Amazon Mobile Analytics
+With Amazon Mobile Analytics, you can measure app usage and app revenue.
+
+## Application Services
+### AWS Step Functions
+AWS Step Functions makes it easy to coordinate the components of distributed applications and microservices using visual workflows
+
+### Amazon API Gateway
+Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
+
+### Amazon Elastic Transcoder
+Amazon Elastic Transcoder is media transcoding in the cloud.
+
+### Amazon Simple Workflow
+Amazon Simple Workflow (Amazon SWF) helps developers build, run, and scale background jobs that have parallel or sequential steps.
+
+## Messaging
+### Amazon SQS (Amazon Simple Queue Service)
+Amazon SQS is a fast, reliable, scalable, fully managed message queuing service.
+
+### Amazon SNS (Simple Notification Service)
+Amazon Simple Notification Service (Amazon SNS) is a fast, flexible, fully managed push notification service that lets you send individual messages or to fan-out messages to large numbers of recipients.
+
+### Amazon SES (Simple Email Service)
+Amazon SES is a cost-effective email service built on the reliable and scalable infrastructure that Amazon.com developed to serve its own customer base.
+
+## Business Productivity
+### Amazon WorkDocs
+Amazon WorkDocs is a fully managed, secure enterprise storage and sharing service with strong administrative controls and feedback capabilities that improve user productivity.
+
+### Amazon WorkMail
+Amazon WorkMail is a secure, managed business email and calendar service with support for existing desktop and mobile email client applications.
+
+### Amazon Chime
+Amazon Chime is a communications service that transforms online meetings with a secure, easy-to-use application that you can trust.
+
+## Desktop & App Streaming
+### Amazon WorkSpaces
+Amazon WorkSpaces is a fully managed, secure desktop computing service that runs on the AWS Cloud.
+
+### Amazon AppStream 2.0
+Amazon AppStream 2.0 is a fully managed, secure application streaming service that allows you to stream desktop applications from AWS to any device running a web browser, without rewriting them.
+
+### Internet of Things
+AWS IoT is a managed cloud platform that lets connected devices easily and securely interact with cloud applications and other devices.
+
+### AWS Greengrass
+AWS Greengrass is software that lets you run local compute, messaging, and data caching for connected devices in a secure way.
+
+### AWS IoT Button
+AWS IoT Button is a programmable button based on the Amazon Dash Button hardware.
+
+## Game Development
+### Amazon GameLift
+Amazon GameLift is a managed service for deploying, operating, and scaling dedicated game servers for session-based multiplayer games.
+
+## Amazon Lumberyard 
+Amazon Lumberyard is a free, cross-platform, 3D game engine for you to create the highestquality games, connect your games to the vast compute and storage of the AWS Cloud, and engage fans on Twitch.
 
 
