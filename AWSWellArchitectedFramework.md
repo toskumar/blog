@@ -1,11 +1,11 @@
 # Well Architected Framework
 
 ## 5 Pillars of Well Architected Framework are
-- [Operational Excellence](#operational-excellence)
-- [Security](#security)
-- [Reliability](#reliability)
-- [Performance Efficiency](#performance-efficiency)
-- [Cost Optimization](cost-optimization)
+- [Operational Excellence](#1-operational-excellence)
+- [Security](#2-security)
+- [Reliability](#3-reliability)
+- [Performance Efficiency](#4-performance-efficiency)
+- [Cost Optimization](#5-cost-optimization)
 
 ### 1. Operational Excellence
 The operational excellence pillar includes the ability to run and monitor systems to deliver business value and to continually improve supporting processes and procedures.
