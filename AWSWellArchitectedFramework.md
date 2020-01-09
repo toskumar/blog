@@ -55,7 +55,7 @@ There are five design principles for performance efficiency in the cloud:
 - Experiment more often
 - Mechanical sympathy
 
-### 5. Cost Optimizatization
+### 5. Cost Optimization
 The cost optimization pillar includes the ability to avoid or eliminate unneeded cost or suboptimal resources. 
 
 **Design Principles**
