@@ -10,7 +10,10 @@
   - **AWS Professional Services** organization is a global team of experts that can help you realize your desired business outcomes when using the AWS Cloud. 
 
   - AWS Professional Serices created the AWS Cloud Adoption Framework to help organization design and travel an accelerated path to successful cloud adoption.
-  
+
+## AWS Partner Network
+The AWS Partner Network (APN) is the global partner program for technology and consulting businesses who leverage Amazon Web Services to build solutions and services for customers. 
+
 ## AWS Cost
 
   - **AWS Cost Explorer** has an easy-to-use interface that lets you visualize, understand and manage your AWS costs and usage over time.
