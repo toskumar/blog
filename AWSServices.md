@@ -282,7 +282,7 @@ AWS Step Functions makes it easy to coordinate the components of distributed app
 Amazon API Gateway is a fully managed service that makes it easy for developers to create, publish, maintain, monitor, and secure APIs at any scale.
 
 ### Amazon Elastic Transcoder
-Amazon Elastic Transcoder is media transcoding in the cloud.
+Amazon Elastic Transcoder is a media transcoding in the cloud.
 
 ### Amazon Simple Workflow
 Amazon Simple Workflow (Amazon SWF) helps developers build, run, and scale background jobs that have parallel or sequential steps.
@@ -319,7 +319,7 @@ Amazon AppStream 2.0 is a fully managed, secure application streaming service th
 AWS IoT is a managed cloud platform that lets connected devices easily and securely interact with cloud applications and other devices.
 
 ### AWS Greengrass
-AWS Greengrass is software that lets you run local compute, messaging, and data caching for connected devices in a secure way.
+AWS Greengrass is a software that lets you run local compute, messaging, and data caching for connected devices in a secure way.
 
 ### AWS IoT Button
 AWS IoT Button is a programmable button based on the Amazon Dash Button hardware.
