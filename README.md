@@ -2,7 +2,7 @@
 
 - AWS
   - [AWS Services](AWSServices.md)
-  - [AWS Support and Cost](AWSSupportAndCost.md)
+  - [AWS Support](AWSSupport.md)
   - [AWS Well-Architected Framework](AWSWellArchitectedFramework.md)
  
 - Java
