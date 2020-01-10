@@ -36,6 +36,12 @@ Amazon EC2 Container Service (ECS) is a highly scalable, high-performance contai
 Amazon EC2 Container Registry (ECR) is a fully-managed Docker container registry that makes it easy for developers to store, manage, 
 and deploy Docker container images.
 
+### AWS EKS (Elastic Kubernetes Service)
+Amazon Elastic Kubernetes Service is a fully managed Kubernetes service.
+
+### AWS Fargate
+AWS Fargate is a serverless compute engine for containers that works with both Amazon Elastic Container Service (ECS) and Amazon Elastic Kubernetes Service (EKS).
+
 ### Amazon LightSail
 Amazon Lightsail is designed to be the easiest way to launch and manage a virtual private server with AWS.
 
