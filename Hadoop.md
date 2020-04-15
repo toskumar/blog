@@ -4,7 +4,7 @@ Hadoop is a framework that allows for the distributed storage, processing of lar
 ## Modules
 * Hadoop Common: The common utilities that support the other Hadoop modules.
 * Hadoop Distributed File System (HDFS): A distributed file system that provides high-throughput access to application data.
-* Hadoop YARN: A framework for job scheduling and cluster resource management.
+* Hadoop YARN (Yet Another Resource Negotiator): A framework for job scheduling and cluster resource management.
 * Hadoop MapReduce: A YARN-based system for parallel processing of large data sets.
 * Hadoop Ozone: A scalable, redundant, and distributed object store which is built on a highly available, replicated block storage layer called Hadoop Distributed Data Store (HDDS).
 
