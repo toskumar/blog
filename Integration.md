@@ -27,5 +27,5 @@
 * __Asynchronous Communication__ - Messaging enables a send and forget approach to communication. The sender does not have to wait for the receiver to receive and process the message; it does not even have to wait for the messaging system to deliver the message.
 * __Throttling__ - A problem with remote procedure calls is that too many of them on a single receiver at the same time can overload the receiver.
 * __Reliable Communication__ - Messaging provides reliable delivery that a remote procedure call (RPC) cannot.
-* __Mediation__ - The messaging system acts as a mediator—as in the Mediator pattern [GoF]—between all of the programs that can send and receive messages.
+* __Mediation__ - The messaging system acts as a mediator between all of the programs that can send and receive messages.
 * __Thread Management__ - Asynchronous communication means that one application does not have to block while waiting for another application to perform a task, unless it wants to.
