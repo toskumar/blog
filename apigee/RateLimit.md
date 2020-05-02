@@ -147,7 +147,7 @@ if(verb == "POST") {
 </Quota>
 ```
 
-## Sample Endpoint
+## Reference Endpoint
 1. [Apigee restclient](https://apigee-restclient.appspot.com)
 1. [Mocktarget plain text](https://mocktarget.apigee.net)
 1. [Mocktarget json api](https://mocktarget.apigee.net/json)
