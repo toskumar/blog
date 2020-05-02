@@ -27,8 +27,12 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
     - Calendar - Configure a quota based on an explicit start time.
     - RollingWindow - for example, 1 day. When a request comes in, Edge looks at the exact time of the request (say 5:01pm), counts the number of requests that came in between then and 5:01pm the previous day (1 day) and determines whether or not quota has been exceeded during that window.
     - Flexi - Configure a quota that causes the counter to begin when the first request message is received from a client, and resets based on the interval.
-  
+  - Quota Elements
+    - Distributed - there can be one or more Message Processors to process incoming requests. Set this element to true to specify that the policy should maintain a central counter and continuously synchronize it across all Message Processors. Setting the element to false will have a counter for each message processor.
+    - Synchronous - Set to true to update a distributed quota counter synchronously.
 - Concurrent Rate Limit Policy - provides the number of concurrent connections between Apigee Edge and a backend service that are allowed at any given time.
+
+
 [Examples](RateLimit.md)
 
 ### Concurrent Rate Limit
