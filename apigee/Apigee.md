@@ -3,11 +3,11 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
 
 
 ## Apigee Proxy Model
-* Apigee proxy edge stands is between the client and target endpoint
+* Apigee proxy edge stands in between the client and target endpoint
 * It consists of ProxyEndpoint and TargetEndpoint
-* Both endpoints are configured as preFlow - > conditionalFlow -> postFlow
-* Request first passthough the proxy preFlow -> conditionalFlow -> postFlow then target preflow > conditionalFlow -> postFlow
-* Response first passthough the target preFlow -> conditionalFlow -> postFlow then proxy preflow > conditionalFlow -> postFlow 
+* Both endpoints are configured as preFlow => conditionalFlow => postFlow
+* First the client request passthough the proxy preFlow => conditionalFlow => postFlow then target preflow => conditionalFlow => postFlow => endpoint
+* Second the endpoint response passthough the target preFlow => conditionalFlow => postFlow then proxy preflow => conditionalFlow => postFlow => client
 
 ![ApigeeProxyModel](./img/ApigeeProxyModel.png)
 
@@ -23,6 +23,7 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
 
 - Quota Policy - enforces consumption limits on client apps by maintaining a distributed 'counter' that tallies incoming requests.
   - Quota Types
+    - default
     - Calendar
     - RollingWindow
     - Flexi
