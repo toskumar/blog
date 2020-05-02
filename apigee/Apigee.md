@@ -18,10 +18,16 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
 - Transforming Messages
 
 ### Secure Policy
-Spike Arrest
-
-Quota Policy
-
-Concurrent Rate Limit
-
 ### Rate Limit Policy
+- Spike Arrest Policy - smooths the traffic spikes by dividing a limit that you define into smaller intervals. For example, if you define a limit of 60 messages per minute, the Spike Arrest policy enforces a limit of about 1 request every 1 second.
+
+- Quota Policy - enforces consumption limits on client apps by maintaining a distributed 'counter' that tallies incoming requests.
+  - Quota Types
+    - Calendar
+    - RollingWindow
+    - Flexi
+  
+- Concurrent Rate Limit Policy - provides the number of concurrent connections between Apigee Edge and a backend service that are allowed at any given time.
+  
+
+### Concurrent Rate Limit
