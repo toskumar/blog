@@ -3,9 +3,9 @@
 ## Spike Control
 **Example 1 - Spike Arrest rate limiting policy**
 1. Create and deploy a reverse proxy type by using a [Mocktarget](https://mocktarget.apigee.net/json) endpoint 
-1. Add spike arrest policy in the request preFlow to limit 5 request per second (5ps)
+1. Add spike arrest policy in the proxy request preFlow and set the limit to 5 request/second (5ps)
 1. Save and deploy the api proxy in the test environment
-1. Test the URL in browser or any rest client
+1. Test the URL in browser or any REST client
 ```xml
 <SpikeArrest async="false" continueOnError="false" enabled="true" name="Spike-Arrest-1">
     <DisplayName>Spike Arrest-1</DisplayName>
@@ -16,14 +16,14 @@
 
 ## Quota Policy
 
-**Example 2 - Default quota type, allow count, interval, timeunit and distributed/synchronized=true|fase behaviour**
+**Example 2 - Default quota type, allow count, interval, timeunit ,flowvariable and distributed/synchronized=true|fase behaviour**
 1. Create and deploy a reverse proxy type by using a [Mocktarget](https://mocktarget.apigee.net/json) endpoint 
 1. Add quota policy type to the proxy request preFlow
 1. In Quota element remove the attribute type
 1. Set Allow count, Interval and Timeunit
 1. Identifier request queryparam appname ensure that each app has a counter/timeunit
 1. Set the distributed and synchronous element to true and false to see the counter behaviour
-1. Test the URL in browser or any rest client 
+1. Test the URL in browser or any REST client 
 1. scenario 1 - http://demo-test.apigee.net/example2?appname=mobile
 1. scenario 2 - http://demo-test.apigee.net/example2?appname=web
 
@@ -44,7 +44,7 @@
 1. Create and deploy a standard reverse proxy type
 1. Add Javascript policy in proxy request preFlow
 1. Add Quota policy to proxy request preFlow
-1. Test the URL in browser or any rest client 
+1. Test the URL in browser or any REST client 
 1. scenario 1 - GET http://demo-test.apigee.net/example3
 1. scenario 2 - POST http://demo-test.apigee.net/example3
 
@@ -71,9 +71,9 @@ if(verb == "POST") {
 
 **Example 4 Quota calendar policy**
 1. Create and deploy a standard reverse proxy type
-1. Add a Quota type policy and set the type="calendar"
+1. Add a Quota type policy to the proxy request preFlow and set the type="calendar"
 1. Set the StartTime element to the future date and time
-1. Test the URL in browser or any rest client http://demo-test.apigee.net/example4
+1. Test the URL in browser or any REST client http://demo-test.apigee.net/example4
 
 ```xml
 <Quota async="false" continueOnError="false" enabled="true" name="Quota-1" type="calendar">
@@ -90,8 +90,8 @@ if(verb == "POST") {
 
 **Example 5 Quota rolling window policy**
 1. Create and deploy a standard reverse proxy type
-1. Add a Quota type policy and set the type="rollingwindow"
-1. Test the URL in browser or any rest client http://demo-test.apigee.net/example5
+1. Add a Quota type policy the proxy request preFlow and set the type="rollingwindow"
+1. Test the URL in browser or any REST client http://demo-test.apigee.net/example5
 
 ```xml
 <Quota async="false" continueOnError="false" enabled="true" name="Quota-1" type="rollingwindow">
@@ -107,8 +107,8 @@ if(verb == "POST") {
 
 **Example 6 Quota flexi policy** (Counter start after receiving the first request and thereafter at regular interval)
 1. Create and deploy a standard reverse proxy type
-1. Add a Quota type policy and set the type="flexi"
-1. Test the URL in browser or any rest client http://demo-test.apigee.net/example6
+1. Add a Quota type policy to the proxy request preFlow and set the type="flexi"
+1. Test the URL in browser or any REST client http://demo-test.apigee.net/example6
 
 ```xml
 <Quota async="false" continueOnError="false" enabled="true" name="Quota-1" type="flexi">
@@ -124,9 +124,9 @@ if(verb == "POST") {
 
 **Example 7 Conditional quota policy - (Assigning quota for each appname)**
 1. Create and deploy a standard reverse proxy type
-1. Add a Quota type policy and set the Allow/Class ref
+1. Add a Quota type policy to the proxy request preFlow and set the Allow/Class ref
 1. Set Allow partner count and public count 
-1. Test the URL in browser or any rest client 
+1. Test the URL in browser or any REST client 
 1. scenario 1 - http://demo-test.apigee.net/example7?appname=partner
 1. scenario 1 - http://demo-test.apigee.net/example7?appname=public
 
@@ -145,6 +145,37 @@ if(verb == "POST") {
     <Synchronous>true</Synchronous>
     <TimeUnit>minute</TimeUnit>
 </Quota>
+```
+
+**Example 8 - To display the available count, used count and total count in the response**
+1. Create and deploy a standard reverse proxy type
+1. Add a Quota type policy to the proxy request preFlow
+1. Add an AssignMessage policy to the proxy response preFlow
+1. Set the payload as application/json and the output response
+1. Test the URL in browser or any REST client http://demo-test.apigee.net/example8
+
+```xml
+<!--Quota policy -->
+<Quota async="false" continueOnError="false" enabled="true" name="Quota-1">
+    <DisplayName>Quota-1</DisplayName>
+    <Properties/>
+    <Allow count="3"/>
+    <Interval>1</Interval>
+    <Distributed>true</Distributed>
+    <Synchronous>true</Synchronous>
+    <TimeUnit>minute</TimeUnit>
+</Quota>
+
+<!--AssignMessage policy -->
+<AssignMessage name="set-dynamic-content">
+  <AssignTo createNew="false" type="response"></AssignTo>
+  <Set>
+    <Payload contentType="application/json" variablePrefix="@" variableSuffix="#">
+      {"quotaAvailable": "@ratelimit.Quota-1.available.count#", "quotaUsed":"@ratelimit.Quota-1.used.count#"}
+    </Payload>
+  </Set>
+  <IgnoreUnresolvedVariables>false</IgnoreUnresolvedVariables>
+</AssignMessage>
 ```
 
 ## Reference Endpoint
