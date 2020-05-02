@@ -29,6 +29,6 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
     - Flexi - Configure a quota that causes the counter to begin when the first request message is received from a client, and resets based on the interval.
   
 - Concurrent Rate Limit Policy - provides the number of concurrent connections between Apigee Edge and a backend service that are allowed at any given time.
-  
+[Examples](RateLimit.md)
 
 ### Concurrent Rate Limit
