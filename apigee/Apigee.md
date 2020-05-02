@@ -23,10 +23,10 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
 
 - Quota Policy - enforces consumption limits on client apps by maintaining a distributed 'counter' that tallies incoming requests.
   - Quota Types
-    - default
-    - Calendar
-    - RollingWindow
-    - Flexi
+    - default - when type is not specified, quota is based on allow count and time interval.
+    - Calendar - Configure a quota based on an explicit start time.
+    - RollingWindow - for example, 1 day. When a request comes in, Edge looks at the exact time of the request (say 5:01pm), counts the number of requests that came in between then and 5:01pm the previous day (1 day) and determines whether or not quota has been exceeded during that window.
+    - Flexi - Configure a quota that causes the counter to begin when the first request message is received from a client, and resets based on the interval.
   
 - Concurrent Rate Limit Policy - provides the number of concurrent connections between Apigee Edge and a backend service that are allowed at any given time.
   
