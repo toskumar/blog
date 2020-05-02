@@ -12,7 +12,7 @@
   - [Mobile Services](#mobile-services)
   - [Application Services](#application-services)
   - [Business Productivity](#business-productivity)
-  - [Desktop & App Streaming](#desktop--app-streaming)
+  - [Desktop & App Streaming](#desktop-app-streaming)
   - [Internet of Things](#internet-of-things)
   - [Game Development](#game-development)
   - [Billing and Cost](#billing-and-cost)
