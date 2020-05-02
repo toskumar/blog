@@ -1,7 +1,7 @@
 # Rate Limit Policy
 
 ## Spike Control
-**Example 1 - Spike Arrest rate limiting policy **
+**Example 1 - Spike Arrest rate limiting policy**
 1. Create and deploy a reverse proxy type by using a [Mocktarget](https://mocktarget.apigee.net/json) endpoint 
 1. Add spike arrest policy in the request preFlow to limit 5 request per second (5ps)
 1. Save and deploy the api proxy in the test environment
