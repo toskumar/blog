@@ -32,7 +32,26 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
     - Synchronous - Set to true to update a distributed quota counter synchronously.
 - Concurrent Rate Limit Policy - provides the number of concurrent connections between Apigee Edge and a backend service that are allowed at any given time.
 
+
+**Difference between Spike arrest policy and Quota policy**
+|Spike Arrest Policy | Quota Policy|
+|---|---|
+|Based on technical requirement and backend system threshold | Based on business requirement |
+|Rate limit is based on per second or per minute | Rate limit is based on per subscriber per timeunit eg. minute, months|
+|Supports Denial of Service (DoS/DDoS), Traffic Management, Bot protection | Supports subscriptions, usage restriction and metering|
+
+
 [Rate Limit Policy Examples](RateLimit.md)
 
 ### Caching and Persistence
 ### Transforming Messages
+
+
+## Reference Endpoint
+1. [Apigee restclient](https://apigee-restclient.appspot.com)
+1. [Mocktarget plain text](https://mocktarget.apigee.net)
+1. [Mocktarget json api](https://mocktarget.apigee.net/json)
+1. [httpbin api](http://httpbin.org/get)
+1. [Google book api](https://www.googleapis.com/books/v1/volumes?q=nodejs)
+1. [Swagger petstore api](https://petstore.swagger.io/v2/swagger.json)
+1. [GMT time](https://time.is/GMT)

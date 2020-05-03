@@ -16,7 +16,8 @@
 
 **Example : Spike Arrest rate limiting policy by identifier**
 1. Create and deploy a reverse proxy type by using a [Mocktarget](https://mocktarget.apigee.net/json) endpoint 
-1. Add spike arrest policy in the proxy request preFlow and set the limit to 2 request per minute 
+1. Add spike arrest policy in the proxy request preFlow and set the limit to 2 request per minute
+1. Set the request param **appname** as identifier  
 1. Save and deploy the api proxy in the test environment
 1. Test the URL in browser or any REST client
 1. scenario 1 - http://demo-test.apigee.net/spike-arrest-by-identifier?appname=mobile
@@ -27,7 +28,6 @@
     <DisplayName>Spike Arrest-1</DisplayName>
     <Properties/>
     <Identifier ref="request.queryparam.appname"/>
-    <MessageWeight ref="request.header.weight"/>
     <Rate>2pm</Rate>
 </SpikeArrest>
 ```
@@ -227,7 +227,7 @@ if(verb == "POST") {
 </AssignMessage>
 ```
 
-**Example 10 - **
+**Example : **
 1. Create and deploy a standard reverse proxy type
 1. Add a Quota type policy to the proxy request preFlow
 1. Add an AssignMessage policy to the proxy response preFlow
@@ -235,11 +235,3 @@ if(verb == "POST") {
 1. Test the URL in browser or any REST client http://demo-test.apigee.net/example10
 
 
-## Reference Endpoint
-1. [Apigee restclient](https://apigee-restclient.appspot.com)
-1. [Mocktarget plain text](https://mocktarget.apigee.net)
-1. [Mocktarget json api](https://mocktarget.apigee.net/json)
-1. [httpbin api](http://httpbin.org/get)
-1. [Google book api](https://www.googleapis.com/books/v1/volumes?q=nodejs)
-1. [Swagger petstore api](https://petstore.swagger.io/v2/swagger.json)
-1. [GMT time](https://time.is/GMT)
