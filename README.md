@@ -19,4 +19,4 @@
   - [Mule4 Training Modules](https://github.com/toskumar/mulesoft/tree/master/m4_core_components)
 
 - Apigee
-  - [Apigee](./micro/apigee/Apigee.md)
+  - [Apigee](./micro/apigee)

@@ -14,8 +14,8 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
 ## Apigee Policy
 - [Secure Policy](#secure-policy)
 - [Rate Limit Policy](#rate-limit-policy)
-- Caching and Persistence(#caching-and-persistence)
-- Transforming Messages(#transforming-messages)
+- [Caching and Persistence](#caching-and-persistence)
+- [Transforming Messages](#transforming-messages)
 
 ### Secure Policy
 ### Rate Limit Policy
