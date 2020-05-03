@@ -5,17 +5,17 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
 ## Apigee Proxy Model
 * Apigee proxy edge stands in between the client and target endpoint
 * It consists of ProxyEndpoint and TargetEndpoint
-* Both endpoints are configured as preFlow => conditionalFlow => postFlow
-* First the client request passthough the proxy preFlow => conditionalFlow => postFlow then target preflow => conditionalFlow => postFlow => endpoint
-* Second the endpoint response passthough the target preFlow => conditionalFlow => postFlow then proxy preflow => conditionalFlow => postFlow => client
+* Both endpoints are configured as **preFlow => conditionalFlow => postFlow**
+* First the client request passthrough the **proxy preFlow => conditionalFlow => postFlow then target preFlow => conditionalFlow => postFlow => endpoint**
+* Second the endpoint response passthrough the **target preFlow => conditionalFlow => postFlow then proxy preFlow => conditionalFlow => postFlow => client**
 
 ![ApigeeProxyModel](./img/ApigeeProxyModel.png)
 
 ## Apigee Policy
 - [Secure Policy](#secure-policy)
 - [Rate Limit Policy](#rate-limit-policy)
-- Caching and Persistence
-- Transforming Messages
+- Caching and Persistence(#caching-and-persistence)
+- Transforming Messages(#transforming-messages)
 
 ### Secure Policy
 ### Rate Limit Policy
@@ -32,7 +32,7 @@ Apigee is a API Managment Platform to design, secure, analyze, and scale APIs an
     - Synchronous - Set to true to update a distributed quota counter synchronously.
 - Concurrent Rate Limit Policy - provides the number of concurrent connections between Apigee Edge and a backend service that are allowed at any given time.
 
+[Rate Limit Policy Examples](RateLimit.md)
 
-[Examples](RateLimit.md)
-
-### Concurrent Rate Limit
+### Caching and Persistence
+### Transforming Messages

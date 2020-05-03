@@ -1,19 +1,19 @@
 # Blog
 
 - AWS
-  - [AWS Services](./aws/AWSServices.md)
-  - [AWS Support](./aws/AWSSupport.md)
-  - [AWS Well-Architected Framework](./aws/AWSWellArchitectedFramework.md)
+  - [AWS Services](./micro/aws/AWSServices.md)
+  - [AWS Support](./micro/aws/AWSSupport.md)
+  - [AWS Well-Architected Framework](./micro/aws/AWSWellArchitectedFramework.md)
  
 - BigData
-  - [Hadoop](./bigdata/Hadoop.md)
+  - [Hadoop](./micro/bigdata/Hadoop.md)
 
 - Java
-  - [Keystore](./java/Keystore.md)
+  - [Keystore](./micro/java/Keystore.md)
 
 - MuleSoft
-  - [Integration](./mulesoft/Integration.md)
-  - [RAML 1.0](./mulesoft/RAML10.md)
+  - [Integration](./micro/mulesoft/Integration.md)
+  - [RAML 1.0](./micro/mulesoft/RAML10.md)
 
 - Apigee
-  - [Apigee](./apigee/Apigee.md)
+  - [Apigee](./micro/apigee/Apigee.md)
