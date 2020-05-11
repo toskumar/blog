@@ -12,3 +12,4 @@ Docker swarm is a container orchestration tool, meaning that it allows the user 
 ## How to setup containers
 1. [Docker Commands](./DockerCommands.md)
 1. [Rabbit MQ](./RabbitMQ.md)
+1. [Orchestration](./Orchestration.md)
