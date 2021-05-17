@@ -4,6 +4,7 @@
   - [AWS Services](./micro/aws/AWSServices.md)
   - [AWS Support](./micro/aws/AWSSupport.md)
   - [AWS Well-Architected Framework](./micro/aws/AWSWellArchitectedFramework.md)
+  - [AWS Machine Learning](./micro/aws/MachineLearning.md)
  
 - BigData
   - [Hadoop](./micro/bigdata/Hadoop.md)
