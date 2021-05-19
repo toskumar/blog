@@ -28,3 +28,10 @@
 * __Reliable Communication__ - Messaging provides reliable delivery that a remote procedure call (RPC) cannot.
 * __Mediation__ - The messaging system acts as a mediator between all of the programs that can send and receive messages.
 * __Thread Management__ - Asynchronous communication means that one application does not have to block while waiting for another application to perform a task, unless it wants to.
+
+## Data Integration Patterns
+* __Migration__ - Migration is the act of moving a specific set of data at a point in time from one system to the other.
+* __Broadcast__ - Broadcast can also be called “one way sync from one to many”, and it is the act of moving data from a single source system to many destination systems in an ongoing and real-time (or near real-time), basis. 
+* __Bi-directional Sync__ - The bi-directional sync data integration pattern is the act of combining two datasets in two different systems so that they behave as one, while respecting their need to exist as different datasets. eg., A union B where A and B are data sets 
+* __Correlation__ - The correlation data integration pattern is a design that identifies the intersection of two data sets and does a bi-directional synchronization of that scoped dataset only if that item occurs in both systems naturally. eg., A inter B where A and B are data sets
+* __Aggregation__ - Aggregation is the act of taking or receiving data from multiple systems and inserting into one.  
