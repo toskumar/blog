@@ -7,19 +7,19 @@
 * column = attribute = feature
 * row = observation = sample = data point
 * Data set can be of any format like json, csv, video, audio or images
-* __Structured Data__ : has a defined schema eg., rdbms table, xml
+* __Structured Data__ : has a defined schema eg., rdbms table
 * __Unstructured Data__ : has no defined schema eg., text, pdf, video, audio, images
 * __Semi-Structured Data__ : has some organizational structure eg., csv, json or xml
 * __Data Repository__
   * __Database__ : Store data in the form of tables with rows and columns, transactional  and strict schema.
-  * __Data Warehouse__ : Data stored from many different data source including structured, unstructured, semi-structured data store. Processing done on import. data is classified stored with user in mind and eady to use with BI tools. 
-  * __Data Lake__ : Massive amount of unstructured data into a single repository, no pre-processing happens before storing data into data lake. Processing done on export, many different sources and formats.
+  * __Data Warehouse__ : Data stored from many different data source including structured, unstructured, semi-structured data store. Processing done on import. data is classified stored with user in mind and easy to use with BI tools. 
+  * __Data Lake__ : Massive amount of unstructured data into a single repository, no pre-processing done before storing data into data lake. Processing done on export, supports many different sources and formats.
 
 ## Machine Learning Data Terminology
 * __Labeled Data (Supervised)__ : is data where we already know what the target attribute is. eg., an email is spam or not, images with a tag.
 * __Unlabeled Data (Unsupervised)__ : is data that has been collected with no target attribute eg., customer information, tweets, log files
-* __Categorical__ : Values are associated with a group, Qualitative, Discrete. Remember (l) in categorical and qualitative. Breed of a dog is Qualitative.
-* __Continuous__ : Values are measurable number, Quantitative, Continuous. Remember (i) in continuous and qualitative. Height and weight of a dog is Quantitative.
+* __Categorical__ : Values are associated with a group, Qualitative, Discrete. eg., small, medium, large
+* __Continuous__ : Values are measurable number, Quantitative, Continuous. eg., 7,9,11
 * __Ground Truth__ : datasets refers to factual data that has been observed, successfully labeled and trusted as "truth" data.
 * __Amazon SageMaker Groun Truth__ : AWS tool that helps build ground truth dataset by allowing different types of tagging/labelling process. Easily create labeled data.
 * __Time Series Data__ : data refers to datasets that capture changes over time. eg., stock price.
@@ -39,7 +39,5 @@
 * __Glue__ : is a fully managed ETL tool which transform and transfer data from one data source to another. Data format conversion is easy.
 
 ## Helper Tools
-* __EMR__ : is a fully managed Hadoop cluster for distributed computing and storage
-* __Athena__ : allow user to directly query S3 data or AWS Glue data catalog
-
-
+* __EMR__ : is a fully managed Hadoop cluster for distributed storage and compute.
+* __Athena__ : allow user to directly query S3 or by AWS Glue data catalog
