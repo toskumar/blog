@@ -42,5 +42,7 @@ AI is a bigger concept to create intelligent machines that can simulate human th
   - Test the Model - Once our machine learning model has been trained on a given dataset, then we test the model for accuracy.
   - Deployment - The last step of machine learning life cycle is deployment, where we deploy the model in the real-world system.
   
-  
+## AWS Machine Learning Approach
+  1. [Data Collection](./machine-learning/DataCollection.md) 
+
   
