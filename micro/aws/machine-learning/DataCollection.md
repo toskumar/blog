@@ -81,3 +81,11 @@ __Kinesis Data Analytics__ : is the easiest way to process streaming data in rea
     * Create metrics, dashboards, monitoring, notification and alarms
     * Output query results into S3 or other AWS services
 
+__Remember__
+* Kinesis Data Streams and Kinesis Data Analytics cannot write data directly to S3. 
+* Kinesis Data Firehose is used as the main delivery mechanism for outputting data into S3.
+* PutRecords is a synchronous send function in Kinesis API(AWS SDK) used for critical events
+* KPL implements is send fund asynchronously and incur an additional delay due to RecordMaxBufferedTime 
+* KPL is easy to set up a retry mechanism, aggregate records to improve throughput, and automatically submits CloudWatch metrics
+* The KPL must be installed as a Java application before it can be used with your Kinesis Data Streams
+* A single shard can ingest up to 1 MB of data per second and process upto 1000 records per second
