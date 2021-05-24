@@ -52,6 +52,7 @@ __Text Feature Engineering__ : Transforms text within our data so Machine Learni
 
 * __Feature Engineering Dates__ : Translating dates into useful information.
   | Date | is_weekend | day_of_week | month | year |
+  | --- | --- | --- | --- | --- | 
   | 2015-06-17 | 0 | 2 | 6 | 2015 |
   | 2015-03-14 | 1 | 5 | 3 | 2015 |
 
@@ -80,7 +81,7 @@ Missing values in your dataset can be just as frustrating and interfere with ana
 * Techniques for replacing missing values 
   * Supervised learning - predicts missing values based on the values of other features. Most difficult but can yield best result.
   * Mean - the average value
-  * Median - oders values then choses value in the middle
+  * Median - orders values then chooses value in the middle
   * Mode - most common value
   * Drop rows - removes missing values
 
