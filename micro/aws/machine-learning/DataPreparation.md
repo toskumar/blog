@@ -52,6 +52,7 @@ __Text Feature Engineering__ : Transforms text within our data so Machine Learni
 
 * __Feature Engineering Dates__ : Translating dates into useful information.
   | Date | is_weekend | day_of_week | month | year |
+  | --- | --- | --- | --- | --- | 
   | 2015-06-17 | 0 | 2 | 6 | 2015 |
   | 2015-03-14 | 1 | 5 | 3 | 2015 |
 
