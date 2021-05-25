@@ -45,5 +45,5 @@ AI is a bigger concept to create intelligent machines that can simulate human th
 ## AWS Machine Learning Approach
   1. [Data Collection](./machine-learning/DataCollection.md) 
   1. [Data Preparation](./machine-learning/DataPreparation.md) 
-
+  1. [Data Analysis](./machine-learning/DataAnalysis.md) 
   
