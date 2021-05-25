@@ -21,6 +21,7 @@ Data > Algorithm > Computation> Feedback > Model > Generalization
 
 ### Cascading Algorithm
 __Problem__ What is the estimated basket size of shoppers who response to our email promotion ?
+<<<<<<< HEAD
 
   `Remove outliers` -> `Identify relevant attributes` -> `Cluster into groups` -> `Predict basket size`
 
@@ -41,6 +42,13 @@ __Problem__ What is the estimated basket size of shoppers who response to our em
  
 * Most sagemaker algorithm accepts csv data eg., content-type=text/csv
 * For unsupervised algorithm specify content-type=text/csv;label_size=0. Target value should be in the first column with no header. Notice that we need to specify the label size in the metadata value.
-* 
+  `Remove outliers` -> `Identify relevant attributes` -> `Cluster into groups` -> `Predict basket size`
+  `Random Cut Forest` -> `PCA` -> `K-Means` -> `Linear Learner` 
 
-
+### Training and Test Data preparation
+  * Training Data (70-80%)
+  * Test Data (30-20%)
+  * Randomize > Split > Train > Test
+  * Sequential Split Strategy - works well for time series data
+  * Split Strategy - 
+  * K-Fold Cross Validation Method - Randomize > Split > Fold > Train > Test > Repeat (Fold, Train Test) multiple times and test the result are approximate equal.
