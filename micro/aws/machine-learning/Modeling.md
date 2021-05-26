@@ -9,6 +9,7 @@ Data > Algorithm > Computation> Feedback > Model > Generalization
 
   | | Supervised | Unsupervised | Reinforcement |
   | --- |  --- |  --- |  --- | 
+  | Training | Training data and Testing data | No Training | How to maximize reward |
   | Discrete | Classification | Clustering | Simulation-based Optimization|
   | Continuous | Regression | Reduction of Dimentionality | Autonomous Devices |
 

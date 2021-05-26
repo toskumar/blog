@@ -48,4 +48,5 @@ AI is a bigger concept to create intelligent machines that can simulate human th
   1. [Data Analysis](./machine-learning/DataAnalysis.md) 
   1. [Data Analysis](./machine-learning/DataAnalysis.md) 
   1. [Modeling](./machine-learning/Modeling.md) 
+  1. [Algorithm](./machine-learning/Algorithm.md) 
   
