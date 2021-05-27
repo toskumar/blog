@@ -220,7 +220,7 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
 | Algorithm | Problem | Input Data Format |
 | --- | --- | --- | 
 | __Linear Regression__ | Regression, Classification | csv |
-| __Factorization Machines Algorithm__ | Factorization Machines Algorithm | csv | 
+| __Factorization Machines Algorithm__ | is designed to capture interactions between features within high dimensional sparse datasets economically. | csv | 
 | __XGBoost__ | Regression, Classification and Ranking. Implementation of the gradient-boosted trees algorithm | csv, libsvm |
 | __K-Nearest Neighbors (k-NN)__ | is an index based algorithm for classification and regression. Training has three steps sampling, dimension, reduction and index building |  json, csv, recordio|
 | __Object2Vec__ | is a general-purpose neural embedding algorithm that is highly customizable |  input and output is a sequence of token eg., text or audio|
@@ -240,10 +240,10 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
 
 | Algorithm | Problem | Input Data Format |
 | --- | --- | --- | 
-| __BlazingText__  | It is a highly advanced application of the Word2vec and text classification algorithms that simply scale to large datasets. It is helpful for many downstream NLP tasks. | json, text |
-| __Sequence-to-Sequence__ | `input and output is a sequence of token eg., text, audio | json, recordIO |
-| __Latent Dirichlet Allocation__ | an algorithm used for determining topics in a set of documents. |csv, json, recordIO |
-| __Neural Topic Model__ | used for determining topics in a set of documents, using a NN approach.| csv, json, recordIO |
+| __BlazingText (Supervised)__  | It is a highly advanced application of the Word2vec and text classification algorithms that simply scale to large datasets. It is helpful for many downstream NLP tasks. | json, text |
+| __Sequence-to-Sequence (Supervised)__ | input and output is a sequence of token eg., text, audio | json, recordIO |
+| __Latent Dirichlet Allocation (Unsupervised)__ | an algorithm used for determining topics in a set of documents. |csv, json, recordIO |
+| __Neural Topic Model (Unsupervised)__ | used for determining topics in a set of documents, using a NN approach.| csv, json, recordIO |
 
 ### Image Analysis (Supervised)
 
@@ -251,7 +251,7 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
 | --- | --- | --- | 
 | __Image Classification__  | Determine the classification of an image. | png, jpeg, recordIO |
 | __Object Detection__ | It is used to classifies and detect objects in images using a single DNN (deep neural network)  | png, jpeg, recordIO |
-| __Semantic Segmentatio__ | It’s used to developing computer vision applications using a pixel-level, fine-grained approach. identifies shapes within an image.| png, jpeg, recordIO |
+| __Semantic Segmentatio__ | It's used to developing computer vision applications using a pixel-level, fine-grained approach. identifies shapes within an image.| png, jpeg, recordIO |
 
 ### Reinforcement Learning
 
