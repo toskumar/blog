@@ -215,3 +215,48 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
   * Ranking : On a n e-commerce website, you can leverage data about search results, clicks, and successful purchases, and then use XGBoost to train a model that can return relevance scores for searched products.
   * Fraud Detection : When XGBOsst is given a dataset of past transactions and whether or not they were fraudulent, it can learn a function that maps input transaction data to the probability that transaction was fradulent.
  
+
+### Supervised Learning 
+| Algorithm | Problem | Input Data Format |
+| --- | --- | --- | 
+| __Linear Regression__ | Regression, Classification | csv |
+| __Factorization Machines Algorithm__ | Factorization Machines Algorithm | csv | 
+| __XGBoost__ | Regression, Classification and Ranking. Implementation of the gradient-boosted trees algorithm | csv, libsvm |
+| __K-Nearest Neighbors (k-NN)__ | is an index based algorithm for classification and regression. Training has three steps sampling, dimension, reduction and index building |  json, csv, recordio|
+| __Object2Vec__ | is a general-purpose neural embedding algorithm that is highly customizable |  input and output is a sequence of token eg., text or audio|
+| __DeepAR Forecasting__ | forecasting, timeseries using RNN| json, parquet |
+
+
+### Unsupervised Learning
+
+| Algorithm | Problem | Input Data Format |
+| --- | --- | --- | 
+| __Principal Component Analysis (PCA)__ |It lowers the dimensionality within a dataset by projecting data points onto the primary few principal components. The aim is to keep as much information or variation as possible | csv, json, recordIO |
+| __K-Means__ | It is used to finds discrete groupings within the dataset, where members of a group are as identical as possible to one another and as non-identical as possible from members of other groups. | csv, json, recordIO |
+| __IP Insights__ | It is used to capture associations b/w IPv4 addresses and various entities | csv, json|
+| __Random Cut Forest (RCF)__ | It identifies anomalous data points within a data set | csv, recordIO |
+
+### Textual Analysis
+
+| Algorithm | Problem | Input Data Format |
+| --- | --- | --- | 
+| __BlazingText__  | It is a highly advanced application of the Word2vec and text classification algorithms that simply scale to large datasets. It is helpful for many downstream NLP tasks. | json, text |
+| __Sequence-to-Sequence__ | `input and output is a sequence of token eg., text, audio | json, recordIO |
+| __Latent Dirichlet Allocation__ | an algorithm used for determining topics in a set of documents. |csv, json, recordIO |
+| __Neural Topic Model__ | used for determining topics in a set of documents, using a NN approach.| csv, json, recordIO |
+
+### Image Analysis (Supervised)
+
+| Algorithm | Problem | Input Data Format |
+| --- | --- | --- | 
+| __Image Classification__  | Determine the classification of an image. | png, jpeg, recordIO |
+| __Object Detection__ | It is used to classifies and detect objects in images using a single DNN (deep neural network)  | png, jpeg, recordIO |
+| __Semantic Segmentatio__ | It’s used to developing computer vision applications using a pixel-level, fine-grained approach. identifies shapes within an image.| png, jpeg, recordIO |
+
+### Reinforcement Learning
+
+| Algorithm | Problem | Input Data Format |
+| --- | --- | --- | 
+| Markov Decision Process | MDPs aim to capture high-level details of a real problem that a learning agent encounters over some period of time in attempting to achieve some ultimate goal. |  |
+
+
