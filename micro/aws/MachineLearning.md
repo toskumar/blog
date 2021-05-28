@@ -46,7 +46,7 @@ AI is a bigger concept to create intelligent machines that can simulate human th
   1. [Data Collection](./machine-learning/DataCollection.md) 
   1. [Data Preparation](./machine-learning/DataPreparation.md) 
   1. [Data Analysis](./machine-learning/DataAnalysis.md) 
-  1. [Data Analysis](./machine-learning/DataAnalysis.md) 
   1. [Modeling](./machine-learning/Modeling.md) 
   1. [Algorithm](./machine-learning/Algorithm.md) 
+  1. [Evaluate and Optimize](./machine-learning/EvaluateOptimize.md) 
   
