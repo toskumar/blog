@@ -29,11 +29,11 @@ __Text Feature Engineering__ : Transforms text within our data so Machine Learni
 
 * __Bag of words__ : Tokenize raw text and create a statistical representation of text. Breaks up text by white space into single word. "He will save us" = {"He", "will", "save", "us"}
  
-* __N-Gram__ : An extension of Bag of Words which produces group of words of n size. Break up text by white space into group of words. eg., 2-Gram "He will save us" = {"He will", "will save", "save us", "He", "will", "save", "us}. Unigram = 1 word token, Bigram = 2 word token, trigram = 3 word token
+* __N-Gram__ : An extension of Bag of Words which produces group of words of n size. Break up text by white space into group of words. eg., 2-Gram "He will save us" = {"He will", "will save", "save us", "He", "will", "save", "us"}. Unigram = 1 word token, Bigram = 2 word token, trigram = 3 word token
 
 * __Orthogonal Sparse Bigram (OSB)__ : Creates group of words of size n and outputs every pair of words that includes the first word. Create groups of words that always include the first word. eg., OSB, size=4 "He will save us" = {"he_will", "he__save", "he___us"}
 
-* __Term Frequency - Inverse Document Frequency (TF-IDF)__ : Represents how important a word or words are to a given set of text by providing appropriate weights to erms that are common and less common in the text. Show us the popularity of a word or words in text data by making common words like "the" and "and" less important.
+* __Term Frequency - Inverse Document Frequency (TF-IDF)__ : Represents how important a word or words are to a given set of text by providing appropriate weights to terms that are common and less common in the text. Show us the popularity of a word or words in text data by making common words like "the" and "and" less important.
     | Doc1 Word | Count| Doc 2 Word | Count |
     | --- | --- |  --- | --- |
     | the  | 3  | the  |  2  |
@@ -69,14 +69,14 @@ Transforming numeric values within our data so Machine Learning algorithms can b
 * __Audio Feature Engineering__ : Extracting useful information from sounds and audio before using them with ML algorithms. Transforming audio data into somthing useful.
 * __Data Formats__ 
   * __File Mode__ : Loads all of the data from S3 directly onto the training instance volumes eg., CSV, JSON, Parquet, Image files (.png or .jpg) 
-  * __Pipe Mode__ : Your datasets are streamed directly from Amazon S3. recordIO-protobuf (creates tensor multi-dimentional array). Faster training and better throughput using recrodIO-protobuf tensors.
+  * __Pipe Mode__ : Your datasets are streamed directly from Amazon S3. recordIO-protobuf (creates tensor multi-dimentional array). Faster training and better throughput using recordIO-protobuf tensors.
 
-### Hanlding Missing Values
+### Handling Missing Values
 Missing values in your dataset can be just as frustrating and interfere with analysis and your models prediction. Missing data can be represented in many different ways (null, NaN,NA, None, etc.) Replacing missing values is known as Imputation.
 
-* Missing at Random (MAR) - means that the prepensity for a data point to be missing is not releated to the missing data but it is related to some of the observed data
-* Missing Comletely at Random (MCAR) - the fact that a certain value is missing has nothing to do with its hypothetical value and with the values of other variables. 
-* Missing not at Random (MNAR) - two possible reasons are that the missing value depnds on the hypothetical value or missing value is dependent on some other variable's value. 
+* Missing at Random (MAR) - means that the prepensity for a data point to be missing is not related to the missing data but it is related to some of the observed data
+* Missing Completely at Random (MCAR) - the fact that a certain value is missing has nothing to do with its hypothetical value and with the values of other variables. 
+* Missing not at Random (MNAR) - two possible reasons are that the missing value depends on the hypothetical value or missing value is dependent on some other variable's value. 
 
 * Techniques for replacing missing values 
   * Supervised learning - predicts missing values based on the values of other features. Most difficult but can yield best result.

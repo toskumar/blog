@@ -21,7 +21,7 @@
 * __Categorical__ : Values are associated with a group, Qualitative, Discrete. eg., small, medium, large
 * __Continuous__ : Values are measurable number, Quantitative, Continuous. eg., 7,9,11
 * __Ground Truth__ : datasets refers to factual data that has been observed, successfully labeled and trusted as "truth" data.
-* __Amazon SageMaker Groun Truth__ : AWS tool that helps build ground truth dataset by allowing different types of tagging/labelling process. Easily create labeled data.
+* __Amazon SageMaker Ground Truth__ : AWS tool that helps build ground truth dataset by allowing different types of tagging/labelling process. Easily create labeled data.
 * __Time Series Data__ : data refers to datasets that capture changes over time. eg., stock price.
 
 ### AWS Data Store
@@ -47,7 +47,7 @@
 # Streaming Data Collection
 
 ### __Kinesis Family__
-__Kinesis Data Streams__ : enables you to build custom applications that process or analyze streaming data for specialized needs
+__Kinesis Data Streams__ : enables you to build custom applications that process or analyze large streaming data for specialized needs
   * Data producers(sensors, application logs) -> Kinesis Streams (Shard1,Shard2, ...) -> Data Consumers(EC2, EMR, Lambda, Kinesis Data Analytics) -> Storage and Analyzation (S3, DynamoDB, Redshift). 
   * Kinesis streams transfer or load or streams data. Shard is a container to hold data. Data consumers like lambda is used process and store the data into s3.
   * Each Shard consists of sequence of records, ingested at 1000 records per second. Default limit is 500 Shard can be incresed to unlimited. A record consist of partition key, sequence number and payload upto 1MB, data can be stored upto 24 hours and extended to 7 days.
@@ -85,7 +85,12 @@ __Remember__
 * Kinesis Data Streams and Kinesis Data Analytics cannot write data directly to S3. 
 * Kinesis Data Firehose is used as the main delivery mechanism for outputting data into S3.
 * PutRecords is a synchronous send function in Kinesis API(AWS SDK) used for critical events
-* KPL implements is send fund asynchronously and incur an additional delay due to RecordMaxBufferedTime 
+* KPL implements send funtion asynchronously and incur an additional delay due to RecordMaxBufferedTime 
 * KPL is easy to set up a retry mechanism, aggregate records to improve throughput, and automatically submits CloudWatch metrics
 * The KPL must be installed as a Java application before it can be used with your Kinesis Data Streams
 * A single shard can ingest up to 1 MB of data per second and process upto 1000 records per second
+* A KPL user record is a blob of data that has particular meaning to the user.
+* A Kinesis Data Streams record contains a partition key, sequence number, and a blob of data.
+* __Batching__ refers to performing a single action on multiple items instead of repeatedly performing the action on each individual item.
+  * __Aggregation__ – Storing multiple records within a single Kinesis Data Streams record.
+  * __Collection__ – Using the API operation PutRecords to send multiple Kinesis Data Streams records to one or more shards in your Kinesis data stream.
