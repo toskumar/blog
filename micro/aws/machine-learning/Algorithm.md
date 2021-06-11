@@ -16,7 +16,7 @@
 * Build your own via docker image.
 
 ### Regression
-`Liner Leaner Algorithm` Liner models are supervised learning algorithms for regression, binary classification or multiclass classification problems. You give the model labels (x,y) with x being high-dimensional vector and y is a numeric label. The algorithm learns a linear function, or, for classification problems, a linear threshold function, and maps a vector x to an approximation of layer y.
+`Linear Leaner Algorithm` Liner models are supervised learning algorithms for regression, binary classification or multi-class classification problems. You give the model labels (x,y) with x being high-dimensional vector and y is a numeric label. The algorithm learns a linear function, or, for classification problems, a linear threshold function, and maps a vector x to an approximation of layer y.
 To use this algorithm you need a number or list of numbers which yields some other number. the answer you're after. You can use it to predict a specific value or a threshold for grouping purposes.
 
 ```
@@ -33,11 +33,11 @@ y = ax + b
   * Discrete Binary Classification Problem. Example: Based on past customer response, should I mail this particular customer? Yes or NO?
   * Discrete Multi-class Classification problems: Example: Based on past customer response, how should I reach this customer? Email, Direct Mail, or Phone Call?
   * Linear Learner works well for continuous data eg., 10,4,30,32,22,50... 
-  * Sparse dataset or missing data set eg., 34,4, ,30,12, , 3, , 12) use Factorization Machines Algorithm
+  * Sparse dataset or missing data set eg., 34,4, ,30,12, ,3, , 12) use Factorization Machines Algorithm
 
 `Factorization Machines Algorithm` General purpose supervised learning algorithm for both binary classification and regression. Captures interactive between features with high dimensional sparse datasets. 
  
-To use this algorithm you need a number or list of numbers which yields some other number. the asswer you'are after. You can use it to predict a specific value or a threshold for placing into one of two groups. It is a good choice when you have "holes" in your data.
+To use this algorithm you need a number or list of numbers which yields some other number. the answer you'are after. You can use it to predict a specific value or a threshold for placing into one of two groups. It is a good choice when you have "holes" in your data.
 
 * __Considers only pair-wise features__ : Amazon SageMaker's implementation of factorization machines will only analyze relationships of two pairs of features at a time.
 * __CSV is not supported__ : CSV is not a good choice for parse dimensions. File and pipe mode training are supported using recordIO-protobuf format with Float32 tensors.
@@ -82,7 +82,7 @@ Input (image) -> Image Analysis Model -> Output(label: dog, confidence:0.30) any
 * __Semantic Segmentation (Supervised)__ : Low level analysis of individual pixels and identifies shapes within an image.
   * Accepts PNG file input: You can submit files for training or inference in uncompressed PNG format
   * Only supports GPU instances for training: Due to the heavy computational power required GPU instances must be used for training.
-  * Can deploy on either CPU or GPU instances: After training is done, model artifacts are output to S3. The model can be deployed as an endpoint with either CPU or GPU instances.
+  * Can deploy on either CPU or GPU instances: After training is done, model artifacts are output to S3. The model can be deployed as an end-point with either CPU or GPU instances.
 * __Use Cases__:
   * Image Metadata Extraction : Extract scene metadata from an image provided an store it in a machine-readable format.
   * Computer Vision Systems : Recognize orientation of a part on an assembly line and, if required, issue an command to a robotic arm to re-orient the part.
@@ -95,7 +95,7 @@ Find occurrences in the data that are significantly beyond "normal" (usually mor
 * __Scales Well__ : RCF scales very well with respect to number of features, data set size and number of instances.
 * __Does not benefit from GPU__ : AWS recommends using normal compute instances (m1.m4,ml.c4)
 * __Use Cases__
-  * Quality Control : Analyze an audio test pattern played by a high end speaker system for any unusal frequencies.
+  * Quality Control : Analyze an audio test pattern played by a high end speaker system for any unusual frequencies.
   * Fraud Detection : If a financial transaction occurs for an unsual amount, unusual time or from an unusual place, flag the transaction from a closer look.
 
 `IP Insights (Unsupervised) (SageMaker)` Learn usage patterns for IPv4 addresses by capturing associations between IP addresses and various entities such as user id or account numbers. 
@@ -112,7 +112,7 @@ Can potentially flag odd online behavior that might require closer review.
 ### Text Analytics
 
 `Latent Dirichlet Allocation(LDA) (Unsupervised)` : LDA algorithm is an unsupervised learning algorithm that attempts to describe a set of observations as a mixture of distinct categories. LDA is most commonly used to discover a user-specified number of topics shared by documents within a text corpus. Here each observation is a document, the features are the presence (or occurrence count) of each word, and the categories are the topics. 
-Used to figure out how similar documents are based on the fequency of similar words.
+Used to figure out how similar documents are based on the frequency of similar words.
 * __Use Cases__
   * Article Recommendation: Recommend articles on similar topics which you might have read or rated in the past.
   * Musical Influence Modeling : Explore which musical artists over time were truly innovative and those who were influenced by those innovators.
@@ -146,7 +146,7 @@ Really, really optimized way to determine contextual semantic relationships betw
   
 `Ojbect2Vec (Supervised)` General-purpose neural embedding algorithm that can learn low-dimensional dense embeddings of high-dimensional objects while preserving the semantics of the relationship between the pairs in the original embedding space.
 A way to map out things in a d-dimentional space to figure out how similar they might be to one another.
-* Expects pairs of things : Looking for pairs of items and whether they are _positive_ or _negative_ from a relationship standpoint. Accepts categorial labels or rating/score-based labels.
+* Expects pairs of things : Looking for pairs of items and whether they are _positive_ or _negative_ from a relationship standpoint. Accepts categorical labels or rating/score-based labels.
 * Feature Engineering : Embedding can be used for downstream supervised tasks like classification or regression.
 * Training data required : Officially, Object2Vec requires labeled data for training, but there are ways to generate the relationship labels from natural clustering.
 * __Use Cases__
@@ -184,18 +184,18 @@ Can predict both point-in-time values and estimated values over a time frame by 
 ### Forecasting
 Past performance is not an indicator of future results.
 
-`DeepAR (Supervised)` Forecasting algorithm for scalar times series using recurrent neural networks(RNN). DeepAR outperforms standard autoregressive integrated moving average (ARIMA) and exponential smoothing (ETS) by training a single model over multipe time series as opposed to each individual time series.
-Can predict both point-in-time values and estimated values over a timeframe by using multiple sets of historic data.
+`DeepAR (Supervised)` Forecasting algorithm for scalar times series using recurrent neural networks(RNN). DeepAR outperforms standard autoregressive integrated moving average (ARIMA) and exponential smoothing (ETS) by training a single model over multiple time series as opposed to each individual time series.
+Can predict both point-in-time values and estimated values over a time frame by using multiple sets of historic data.
   | Forecast Type | Example |
   | --- | --- |
-  | Point Forecst | Number of sneakers sold in a week in X |
+  | Point Forecast | Number of sneakers sold in a week in X |
   | Probabilistic Forecast | Number of sneakers sold in a week is between X and Y with Z% probability |
 
 * Support for various time series : Time series can be numbers, counts, or values in an interval (such as temperature readings between o and 100)
 * More time series is better : Recommend training a model on as many time series as are available. DeepAR really shines with hundreds of related time series.
-* Must supply at least 300 observations : DeepAR requires aminimum number of observations across all time series.
+* Must supply at least 300 observations : DeepAR requires a minimum number of observations across all time series.
 * You must supply some hyper parameters : Context Length, Epochs, Predictions Length and Time Frequency are required hyper parameters.
-* Automatic Evaluation of the Model : Uses a backtest after training to evaluate the accuracy of the model automatically.
+* Automatic Evaluation of the Model : Uses a back test after training to evaluate the accuracy of the model automatically.
 * __Use Cases__
   * Forecasting new product performance : Incorporate historical data from other products to create a model that can predict performance of a newly released product.
   * Predict labor needs for special events : Use labor utilization rates at other distribution centers to predict the required level of staffing for a brand new distribution center.
@@ -251,7 +251,7 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
 | --- | --- | --- | 
 | __Image Classification__  | Determine the classification of an image. | png, jpeg, recordIO |
 | __Object Detection__ | It is used to classifies and detect objects in images using a single DNN (deep neural network)  | png, jpeg, recordIO |
-| __Semantic Segmentatio__ | It's used to developing computer vision applications using a pixel-level, fine-grained approach. identifies shapes within an image.| png, jpeg, recordIO |
+| __Semantic Segmentation__ | It's used to developing computer vision applications using a pixel-level, fine-grained approach. identifies shapes within an image.| png, jpeg, recordIO |
 
 ### Reinforcement Learning
 
