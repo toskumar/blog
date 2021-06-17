@@ -68,11 +68,11 @@ K-Means will take in a list of things with attributes. You specify which attribu
 Predicts the value or classification based on that which you are closest. It can be used to classify or to predict a value (average value of nearest neighbors)
 
 * __You choose the number of "neighbours"__ : You include a value for k, or in other words, the number of closest neighbors to use for classifying.
-* __KNN is alazy algorithm__ : Does not use training data points to generalize but rather uses them to figure out who's nearby.
+* __KNN is a lazy algorithm__ : Does not use training data points to generalize but rather uses them to figure out who's nearby.
 * __Training data stays in memory__ : KNN doesn't learn but rather uses the training dataset to decide on similar samples.
 * __Use Cases__
   * Credit Ratings : Group people together for credit risk based on attributes they share with others of known credit usage.
-  * Product Recommendations : Based onn what someone likes, recommend similar items they might also like.
+  * Product Recommendations : Based on what someone likes, recommend similar items they might also like.
   
 ### Image Analysis
 
@@ -138,7 +138,7 @@ Really, really optimized way to determine contextual semantic relationships betw
   | __Single GPU Instance__ (1 or more GPUs) | Continuous Bag of Words, Skip-gram | Supervised with 1 GPU |
   | __Multiple CPU Instances__ | Batch Skip-gram | None |
 * Expect Single pre-processed text file : Each line in the file should contain a single sentence. If you need to train on multiple text files, concatenate them into one file and upload the file in the respective channel.
-* Highly Scalable : Improves on traditional Word2Vec algorithm by supporting scale-out for multiple CPU instances. FatText text classifier can leverage GPU acceleration.
+* Highly Scalable : Improves on traditional Word2Vec algorithm by supporting scale-out for multiple CPU instances. FastText text classifier can leverage GPU acceleration.
 * Around 20x faster than FastText : Supports pre-trained FastText models but also can perform training about 20x faster than FastText
 * __Use Cases__ 
   * Sentiment Analysis : Evaluate customer comments in social media posts to evaluate whether they have a positive or negative sentiment.
@@ -162,25 +162,6 @@ DeepRacer project is an example for MDP.
   * Autonomous Vehicles : A self-driving car model can _learn_ to stay on the road through iterations of trial and error in a simulation. Once the model is good enough, it can be tested in a real vehicle on a test track.
   * Intelligent HVAC Control : An RL model can learn patterns and routines of building occupants, impact of sunlight as it transitions across the sky and equipment efficiency to optimize the temperature control for lowest energy consumption.
  
- ### Forecasting
-Past performance is not an indicator of future results.
-
-`DeepAR (Supervised)` Forecasting algorithm for scalar times series using recurrent neural networks(RNN). DeepAR outperforms standard autoregressive integrated moving average (ARIMA) and exponential smoothing (ETS) by training a single model over multiple time series as opposed to each individual time series.
-Can predict both point-in-time values and estimated values over a time frame by using multiple sets of historic data.
-  | Forecast Type | Example |
-  | --- | --- |
-  | Point Forecast | Number of sneakers sold in a week in X |
-  | Probabilistic Forecast | Number of sneakers sold in a week is between X and Y with Z% probability |
-
-* Support for various time series : Time series can be numbers, counts, or values in an interval (such as temperature readings between o and 100)
-* More time series is better : Recommend training a model on as many time series as are available. DeepAR really shines with hundreds of related time series.
-* Must supply at least 300 observations : DeepAR requires a minimum number of observations across all time series.
-* You must supply some hyper parameters : Context Length, Epochs, Predictions Length and Time Frequency are required hyper parameters.
-* Automatic Evaluation of the Model : Uses a back test after training to evaluate the accuracy of the model automatically.
-* __Use Cases__
-  * Forecasting new product performance : Incorporate historical data from other products to create a model that can predict performance of a newly released product.
-  * Predict labor needs for special events : Use labor utilization rates at other distribution centers to predict the required level of staffing for a brand new distribution center.
-
 ### Forecasting
 Past performance is not an indicator of future results.
 
@@ -213,7 +194,7 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
 `Decision Tree Ensembles` : We can create a set of classification and regression trees (CART) for each property eg., Location, age, size, number of bed rooms, number of bath rooms, condition, walk up or lift access, economic climate, lending climate.
 * __Use Cases__
   * Ranking : On a n e-commerce website, you can leverage data about search results, clicks, and successful purchases, and then use XGBoost to train a model that can return relevance scores for searched products.
-  * Fraud Detection : When XGBOsst is given a dataset of past transactions and whether or not they were fraudulent, it can learn a function that maps input transaction data to the probability that transaction was fradulent.
+  * Fraud Detection : When XGBoost is given a dataset of past transactions and whether or not they were fraudulent, it can learn a function that maps input transaction data to the probability that transaction was fraudulent.
  
 
 ### Supervised Learning 
@@ -257,6 +238,4 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
 
 | Algorithm | Problem | Input Data Format |
 | --- | --- | --- | 
-| Markov Decision Process | MDPs aim to capture high-level details of a real problem that a learning agent encounters over some period of time in attempting to achieve some ultimate goal. |  |
-
-
+| __Markov Decision Process__ | MDPs aim to capture high-level details of a real problem that a learning agent encounters over some period of time in attempting to achieve some ultimate goal. |  |
