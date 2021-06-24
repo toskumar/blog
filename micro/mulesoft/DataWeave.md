@@ -78,6 +78,6 @@ var name = "Malayalam"
     arr: 0 to 5,
     substring: name[0 to 2],
     indicesToend: name[2 to -1],
-    reverse: name[4 to 0]
+    reverse: name[sizeOf(name)-1 to 0]
 }
 ```
