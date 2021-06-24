@@ -59,11 +59,11 @@ Update operator enables you to update specified fields of a data structure with 
 ```javascript
 %dw 2.0
 var emp = [{"id": 10, "name": "Ken", "age": 30},
-{"id": 11, "name": "Joe", "age": 41}]
+{"id": 11, "name": "Joe", "age": 25}]
 output application/json
 ---
 emp map ((e) -> e update {
-    case age at .age -> age + 1
+    case age at .age if(age >= 30) -> age + 1
     case name at .name -> upper(name)
 })
 ```
