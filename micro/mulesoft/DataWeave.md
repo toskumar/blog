@@ -67,3 +67,17 @@ emp map ((e) -> e update {
     case name at .name -> upper(name)
 })
 ```
+
+### Array, Range and String reverse
+```javascript
+%dw 2.0
+output application/json
+var name = "Malayalam"
+---
+{
+    arr: 0 to 5,
+    substring: name[0 to 2],
+    indicesToend: name[2 to -1],
+    reverse: name[4 to 0]
+}
+```
