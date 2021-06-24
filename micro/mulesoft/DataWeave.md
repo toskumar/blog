@@ -1,0 +1,55 @@
+# DataWeave
+
+### DataWeave code to find sum, average, median and mode 
+```javascript
+%dw 2.0
+output application/json
+var arr = [0,0,1,2,3,4,5]
+var len = sizeOf(arr)
+fun median(arr :Array) = if(isOdd(len)) arr[len/2] else arr[len/2-1] as Number + arr[len/2] as Number
+fun mode(arr :Array) = keysOf(arr orderBy $ groupBy $ mapObject {
+    ($$): sizeOf($)
+} orderBy -$)[0] as Number 
+---
+{
+    //arr: arr,
+    sum: sum(arr),
+    average: (sum(arr)/len) as String {format: "0.##"},
+    median: (median(arr)) as String {format: "0.##"},
+    mode: mode(arr)
+}
+```
+
+### Dataweave code to format number
+```javascript
+%dw 2.0
+output application/json
+type NumberFormat1 = String {format: "0000"}
+type NumberFormat2 = String {format: "0.00"}
+type NumberFormat3 = String {format: "0.##"}
+type NumberFormat4 = String {format: "#,###.##"}
+var num = 5393923/3
+---
+{
+    num1: num as NumberFormat1,
+    num2: num as NumberFormat2,
+    num3: num as NumberFormat3,
+    num4: num as NumberFormat4,
+}
+```
+
+Dataweave code to format date 
+```javascript
+%dw 2.0
+output application/json
+type DateFormat1 = String {format: "yyyy-MM-dd"}
+type DateFormat2 = DateTime {format: "yyyy-MM-dd hh:mm:ss a"}
+type DateFormat3 = Date {format: "dd-MM-yyyy"}
+var date = now()
+---
+{
+    date1: date as DateFormat1,
+    date2: date as DateFormat2,
+    date3: "01-01-2010" as DateFormat3
+}
+```
