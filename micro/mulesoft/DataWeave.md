@@ -38,7 +38,7 @@ var num = 5393923/3
 }
 ```
 
-Dataweave code to format date 
+### Dataweave code to format date 
 ```javascript
 %dw 2.0
 output application/json
@@ -52,4 +52,18 @@ var date = now()
     date2: date as DateFormat2,
     date3: "01-01-2010" as DateFormat3
 }
+```
+### Update operator
+Update operator enables you to update specified fields of a data structure with new values.
+
+```javascript
+%dw 2.0
+var emp = [{"id": 10, "name": "Ken", "age": 30},
+{"id": 11, "name": "Joe", "age": 41}]
+output application/json
+---
+emp map ((e) -> e update {
+    case age at .age -> age + 1
+    case name at .name -> upper(name)
+})
 ```
