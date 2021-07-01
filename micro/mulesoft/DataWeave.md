@@ -81,3 +81,16 @@ var name = "Malayalam"
     reverse: name[sizeOf(name)-1 to 0]
 }
 ```
+
+### DataWeave to call a java static and instance method
+```javascript
+%dw 2.0
+output application/json
+import java!java::lang::String
+import java!java::util::Date
+---
+{
+   String: String::valueOf(true),
+   Date: Date::new().year
+} 
+```
