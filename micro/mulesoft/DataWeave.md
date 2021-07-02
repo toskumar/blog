@@ -142,3 +142,28 @@ var p = {
 ---
 traverse(p)
 ```
+
+### Dataweave function as arguments
+
+```javascript
+%dw 2.0
+output application/json
+
+fun traverse(item: Any, func) = 
+    if(item is Object) item mapObject {
+        (func($$)): traverse($, func)
+    } else 
+    if(item is Array) item map traverse($, func)
+    else item
+
+var p = {
+    "integer": 12,
+    "string": "Hello World",
+    "date": now(),
+    "array": [
+        {"int": 1, "string": "Hello", "date": now()}
+    ]
+}
+---
+[traverse(p, (e) -> lower(e)), traverse(p, (e) -> upper(e))]
+```
