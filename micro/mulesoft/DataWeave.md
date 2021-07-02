@@ -119,3 +119,26 @@ var p = {
 ---
 traverse(p)
 ```
+
+```javascript
+%dw 2.0
+output application/json
+
+fun traverse(item: Any) = 
+    if(item is Object) item mapObject {
+        ($$): traverse($)
+    } else 
+    if(item is Array) item map traverse($)
+    else item
+
+var p = {
+    "integer": 12,
+    "string": "Hello World",
+    "date": now(),
+    "array": [
+        {"int": 1, "string": "Hello", "date": now()}
+    ]
+}
+---
+traverse(p)
+```
