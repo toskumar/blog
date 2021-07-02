@@ -94,3 +94,28 @@ import java!java::util::Date
    Date: Date::new().year
 } 
 ```
+
+### DataWeave to traverse an object, array
+```javascript
+dw 2.0
+output application/json
+
+fun traverse(object: Object) = object mapObject {
+    ($$): traverse($)
+}
+fun traverse(array: Array) = array map traverse ($)
+fun traverse(date: Date) = date
+fun traverse(string: String) = string
+fun traverse(number: Number) = number
+
+var p = {
+    "integer": 12,
+    "string": "Hello World",
+    "date": now(),
+    "array": [
+        {"int": 1, "string": "Hello", "date": now()}
+    ]
+}
+---
+traverse(p)
+```
