@@ -95,9 +95,9 @@ import java!java::util::Date
 } 
 ```
 
-### DataWeave to traverse an object, array
+### DataWeave function to traverse an object, array
 ```javascript
-dw 2.0
+%dw 2.0
 output application/json
 
 fun traverse(object: Object) = object mapObject {
