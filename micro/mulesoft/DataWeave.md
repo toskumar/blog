@@ -19,6 +19,23 @@ fun mode(arr :Array) = keysOf(arr orderBy $ groupBy $ mapObject {
     mode: mode(arr)
 }
 ```
+### DataWeave typed Array
+
+```javascript
+%dw 2.0
+output application/json
+fun median(array: Array<Number>): Number = do { 
+ var arr = array orderBy $
+ var len = sizeOf(arr) 
+ var mid = (len/2)
+ var odd = arr[mid-1]
+ var even = avg([arr[mid-1], arr[mid]])
+  ---
+ if(isOdd(len)) arr[odd] else even 
+}
+---
+median([1,2,3,4,5,6,7,8])
+```
 
 ### Dataweave code to format number
 ```javascript
