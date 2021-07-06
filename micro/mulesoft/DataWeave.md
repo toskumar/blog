@@ -27,14 +27,14 @@ output application/json
 fun median(array: Array<Number>): Number = do { 
  var arr = array orderBy $
  var len = sizeOf(arr) 
- var mid = (len/2)
- var odd = arr[mid-1]
+ var mid = floor(len/2)
+ var odd = arr[mid]
  var even = avg([arr[mid-1], arr[mid]])
   ---
- if(isOdd(len)) arr[odd] else even 
+ if(isOdd(len)) odd else even 
 }
 ---
-median([1,2,3,4,5,6,7,8])
+median([1,2,3,4,5,6,7,8,9,10,11])
 ```
 
 ### Dataweave code to format number
