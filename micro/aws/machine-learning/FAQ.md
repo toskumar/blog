@@ -11,7 +11,7 @@
   * __Batch Size__ Number of samples used to train at any one time
   * __Epochs__ The number of times that the algorithm will process the entire training data 
 
-* __Validation__ Data set can be divided in 80% training data and 20% testing data. In the 80% training data we can split the data into 6-10 equal parts for validating each part to get optimum result. This process is known as K-Fold Cross validation.
+* __Validation__ Data set can be divided into 80% training data and 20% testing data. In the 80% training data we can split the data into 6-10 equal parts for validating each part to get optimum result. This process is known as K-Fold Cross validation.
 
 * __Number of Passes__ The number of times that you let Amazon ML use the same data records is called the number of passes.
 
@@ -30,11 +30,7 @@
   | __Actual True__ | I predicted correctly! (True Positive)     | I was wrong (False Positive) (Type I error) | Precision = TP/(TP+FP) |
   | __Actual False__ | I was wrong. (False Negative) (Type II error) | I predicted Correctly! (True Negative)| Accuracy = (TP + TN)/(TP+FP+FN+TN)|
   | |Recall = TP/(TP+FN) | FPR=FP/(FP/TN) |
-
-* __Accuracy__ measures the percentage of correct predictions. Accuracy = (TP + TN)/(TP+FP+FN+TN)
-
-* __Precision__ Precision shows the percentage of actual positive instance. Precision = TP/(TP+FP)
-
-* __Recall__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
-
-* __False Positive Rate__ measures the false alarm rate or the fraction of actual negatives that are predicted as positive. FPR = FP/(FP+TN) 
+  * __Accuracy__ measures the percentage of correct predictions. Accuracy = (TP + TN)/(TP+FP+FN+TN)
+  * __Precision__ Precision shows the percentage of actual positive instance. Precision = TP/(TP+FP)
+  * __Recall__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
+  * __False Positive Rate__ measures the false alarm rate or the fraction of actual negatives that are predicted as positive. FPR = FP/(FP+TN) 

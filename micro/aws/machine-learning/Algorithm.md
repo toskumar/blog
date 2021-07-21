@@ -200,20 +200,23 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
 ### Supervised Learning 
 | Algorithm | Problem | Input Data Format |
 | --- | --- | --- | 
+| __Logistical Regression__ | Regression, Binary | csv |
 | __Linear Regression__ | Regression, Classification | csv |
+| __Support Vector Machine__ | Classification problem eg., high valued customer vs other customer | csv |
 | __Factorization Machines Algorithm__ | is designed to capture interactions between features within high dimensional sparse datasets economically. | csv | 
 | __XGBoost__ | Regression, Classification and Ranking. Implementation of the gradient-boosted trees algorithm | csv, libsvm |
 | __K-Nearest Neighbors (k-NN)__ | is an index based algorithm for classification and regression. Training has three steps sampling, dimension, reduction and index building |  json, csv, recordio|
 | __Object2Vec__ | is a general-purpose neural embedding algorithm that is highly customizable |  input and output is a sequence of token eg., text or audio|
-| __DeepAR Forecasting__ | forecasting, timeseries using RNN| json, parquet |
-
+| __DeepAR Forecasting__ | forecasting, time series using RNN| json, parquet |
+| __Decision Trees__ | Binary, Numeric, Classification | csv |
+| __Random Forest__ | It is a collection of Decision Trees to solve Binary, Classification problems | csv |
 
 ### Unsupervised Learning
 
 | Algorithm | Problem | Input Data Format |
 | --- | --- | --- | 
 | __Principal Component Analysis (PCA)__ |It lowers the dimensionality within a dataset by projecting data points onto the primary few principal components. The aim is to keep as much information or variation as possible | csv, json, recordIO |
-| __K-Means__ | It is used to finds discrete groupings within the dataset, where members of a group are as identical as possible to one another and as non-identical as possible from members of other groups. | csv, json, recordIO |
+| __K-Means__ | It is used to finds discrete groupings within the dataset, where members of a group are as identical as possible to one another and as non-identical as possible from members of other groups.(Classification) | csv, json, recordIO |
 | __IP Insights__ | It is used to capture associations b/w IPv4 addresses and various entities | csv, json|
 | __Random Cut Forest (RCF)__ | It identifies anomalous data points within a data set | csv, recordIO |
 
