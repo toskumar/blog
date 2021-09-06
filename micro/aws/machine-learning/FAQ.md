@@ -34,3 +34,32 @@
   * __Precision__ Precision shows the percentage of actual positive instance. Precision = TP/(TP+FP)
   * __Recall__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
   * __False Positive Rate__ measures the false alarm rate or the fraction of actual negatives that are predicted as positive. FPR = FP/(FP+TN) 
+
+* __TensorFlow__ is a ML Framework developed by __Google__ and __Keras__ is an opensource API interface for TersorFlow 
+
+* __MXNet__ is a ML/DL Framework developed by __AWS and Microsoft__ and __Gluon__ is an opensource API interface for MXNet  
+
+* __PyTorch__ is an opensource library used by Facebook AI research lab.
+
+* __Scikit Learn__ is the most useful and robust library for machine learning in Python.
+
+## AWS AI and ML Services
+
+* __Amazon Lex__ is a service for building conversational interfaces into any application using voice and text.
+* __Amazon Polly__ is a service that turns text into lifelike speech, allowing you to create applications that talk, and build entirely new categories of speech-enabled products. 
+* __Amazon Translate__ is a neural machine translation service that delivers fast, high-quality, affordable, and customizable language translation. 
+* __Amazon Textract__ is a machine learning service that automatically extracts text, handwriting and data from scanned documents that goes beyond simple optical character recognition (OCR) to identify, understand, and extract data from forms and tables.
+* __Amazon Transcribe__ makes it easy for developers to add speech to text capabilities to their applications.
+* __Amazon Forecast__ is a fully managed service that uses machine learning to deliver highly accurate forecasts.
+* __Amazon Comprehend__ is a natural-language processing (NLP) service that uncover the meaning and relationships in text from customer support incidents, product reviews, social media feeds, news articles and documents.
+* __Amazon Rekognition__ makes it easy to add image and video analysis to your applications.
+* __Amazon Personalize__ is a fully managed machine learning service that goes beyond rigid static rule based recommendation systems.
+* __Amazon Fraud Detector__ is a fully managed service that uses machine learning (ML) and more than 20 years of fraud detection expertise from Amazon, to identify potentially fraudulent activity.
+* __Amazon CodeGuru__ is a developer tool that provides intelligent recommendations to improve code quality and identify an application’s most expensive lines of code.
+* __Amazon Kendra__ is an intelligent search service powered by machine learning.
+* __Amazon Deep Learning AMIs__ provide machine learning practitioners and researchers with the infrastructure and tools to accelerate deep learning in the cloud, at any scale. 
+
+* __Amazon SageMaker__ helps data scientists and developers to prepare, build, train, and deploy high-quality machine learning (ML) models
+* __Amazon SageMaker Ground Truth__ is a fully managed data labeling service that makes it easy to build highly accurate training datasets for machine learning.
+* __Amazon SageMaker Neo__ enables developers to optimize machine learning (ML) models for inference on SageMaker in the cloud and supported devices at the edge.
+* __Amazon Augmented AI__ is a machine learning service which makes it easy to build the workflows required for human review.

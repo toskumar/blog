@@ -50,4 +50,5 @@ AI is a bigger concept to create intelligent machines that can simulate human th
   1. [Algorithm](./machine-learning/Algorithm.md) 
   1. [Evaluate and Optimize](./machine-learning/EvaluateOptimize.md) 
   1. [Implementation and Operation](./machine-learning/ImplementationOperation.md)
+  1. [Machine Learning FAQ](./machine-learning/FAQ.md)
   
