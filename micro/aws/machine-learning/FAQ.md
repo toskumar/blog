@@ -1,20 +1,41 @@
 # Machine Learning FAQ
 
-* __Gradient Descent__ is used to optimize many different type of machine learning algorithms including Linear Regression, Logistic Regression, Support Vector Machines etc.,
+* __Regression__ model is to predict a numerical value
+* __Multiclass__ model is to predict a pre-defined set of values
+* __Binary__ model is to predict one of the two states, such as true or false 
 
-* __Regularization__  is a machine learning technique that you can use to obtain higher-quality models. We apply regularization when the model is overfit. Regularization is achieved through regression. (A model is said to overfit when it performs well in training dataset and not in realworld)
-  * L1 Regularization (Lassso Regression)
-  * L2 Regularization (Ridge Regression)
+* __Batch Prediction__ a set of observations that can run all at once
+* __Real-time Prediction__ are for applications with a low latency requirement, such as interactive web, mobile, or desktop applications.
+
+* __Machine Learning Situations__ when you can't code the rules and you can't scale.
+
+* __Feature Engineering__ 
+  * __Replace missing data__ is knows as imputation. Common strategy is to replace missing data with mean or median value. It is important to understand your data before choosing a strategy for replacing missing values.
+  * __Forming Cartesian products__ of one variable with another variable eg., variable A, B, C with Z => A_Z, B_Z and C_Z 
+  * __Binning__ numeric variables to categories eg., the continuous numeric feature age is not linearly correlated with the likelihood to purchase a book
+  * __Domain-specific__ features eg., l, b, h and introduce v=l*b*h
+  * __Variable-specific__ a sentence has generic ways of processing. eg., forming n-grams from text “the fox jumped over the fence”
+ 
+* __Learning Algorithm__ The learning algorithm’s task is to learn the weights for the model. It consists of a loss function and an optimization technique (to reduce the loss). The optimization technique used in Amazon ML is online Stochastic Gradient Descent (SGD).
+  * For __binary classification__ , Amazon ML uses logistic regression (logistic loss function + SGD).
+  * For __multiclass classification__ , Amazon ML uses multinomial logistic regression (multinomial logistic loss + SGD).
+  * For __regression__ , Amazon ML uses linear regression (squared loss function + SGD).
+
+* __Stochastic Gradient Descent__ is used to optimize many different type of machine learning algorithms including Linear Regression, Logistic Regression, Support Vector Machines etc.,
 
 * __Hyperparameters__ are external parameters and can be set by user when initiating the algorithm and parameters are internal to the training model. Examples Learning rate, Epochs, Batch size.
   * __Learning Rate__ Determine the size of steps taken during gradient descent optimization. values are between 0 and 1
   * __Batch Size__ Number of samples used to train at any one time
   * __Epochs__ The number of times that the algorithm will process the entire training data 
+  * __Number of Passes__ The number of times that you let Amazon ML use the same data records is called the number of passes.
+  * __Shuffling/Randamoize__ your data results in better ML models
+  * __Regularization__  is a machine learning technique that you can use to obtain higher-quality models. We apply regularization when the model is overfit. Regularization is achieved through regression. (A model is said to overfit when it performs well in training dataset and not in realworld)
+    * L1 Regularization (Lassso Regression)
+    * L2 Regularization (Ridge Regression)
+  
+* __Validation__ Data set can be divided into 70-80% training data and 30-20% testing data. In the 80% training data we can split the data into 6-10 equal parts for validating each part to get optimum result. This process is known as K-Fold Cross validation.
 
-* __Validation__ Data set can be divided into 80% training data and 20% testing data. In the 80% training data we can split the data into 6-10 equal parts for validating each part to get optimum result. This process is known as K-Fold Cross validation.
-
-* __Number of Passes__ The number of times that you let Amazon ML use the same data records is called the number of passes.
-
+### Evaluate Model Accuracy
 * __AUC__ Area Under the ROC Curve (AUC) measures the ability of a binary ML model to predict a higher score for positive examples as compared to negative examples.
 
 * __Macro-averaged F1-score__ The macro-averaged F1-score is used to evaluate the predictive performance of multiclass ML models.
@@ -22,6 +43,12 @@
 * __RMSE__ 	The Root Mean Square Error (RMSE) is a metric used to evaluate the predictive performance of regression ML models.
 
 * __Cut-Off__ Conversion of a numeric prediction score into a 0 or 1 label 
+
+* __Underfitting__ the training data when the model performs poorly on the training data.
+
+* __Overfitting__ your training data when you see that the model performs well on the training data but does not perform well on the evaluation data.
+
+* __Retraining Model__ It is a good practice to continuously monitor the incoming data and retrain your model on newer data if you find that the data distribution has deviated significantly from the original training data distribution. A simpler strategy is to train the model periodically, for example, daily, weekly, or monthly.
 
 * __Confusion Matrix__
 
