@@ -10,6 +10,8 @@
 * __Machine Learning Situations__ when you can't code the rules and you can't scale.
 
 * __Feature Engineering__ 
+  * __Feature engineering__ is the process of using domain knowledge to extract features from raw data.
+  * __Feature selection__ is the process of selecting a subset of relevant features for use in model
   * __Replace missing data__ is knows as imputation. Common strategy is to replace missing data with mean or median value. It is important to understand your data before choosing a strategy for replacing missing values.
   * __Forming Cartesian products__ of one variable with another variable eg., variable A, B, C with Z => A_Z, B_Z and C_Z 
   * __Binning__ numeric variables to categories eg., the continuous numeric feature age is not linearly correlated with the likelihood to purchase a book
@@ -35,7 +37,7 @@
   
 * __Validation__ Data set can be divided into 70-80% training data and 30-20% testing data. In the 80% training data we can split the data into 6-10 equal parts for validating each part to get optimum result. This process is known as K-Fold Cross validation.
 
-### Evaluate Model Accuracy
+## Evaluate Model Accuracy
 * __AUC__ Area Under the ROC Curve (AUC) measures the ability of a binary ML model to predict a higher score for positive examples as compared to negative examples. Prediction range is 0 to 1. Precision, Recall and Accuracy must be higher value and FPR shall be a smaller value. 
 
 * __Macro-averaged F1-score__ The macro-averaged F1-score is used to evaluate the predictive performance of multiclass ML models. 
@@ -65,7 +67,7 @@
   * __Recall__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
   * __False Positive Rate__ measures the false alarm rate or the fraction of actual negatives that are predicted as positive. FPR = FP/(FP+TN) 
 
-### ML Framework
+## ML Framework
 * __TensorFlow__ is a ML Framework developed by __Google__ and __Keras__ is an opensource API interface for TersorFlow 
 
 * __MXNet__ is a ML/DL Framework developed by __AWS and Microsoft__ and __Gluon__ is an opensource API interface for MXNet  
@@ -136,4 +138,34 @@
   * __Reinforcement Learning__ - Maximize the long-term reward that an agent receives as a result of its actions.
   * __Preprocessing__ - Analyze and preprocess data, tackle feature engineering, and evaluate models.
   * __Batch Transform__ - Preprocess datasets, run inference when you don't need a persistent endpoint, and associate input records with inferences to assist the interpretation of results.
-  
+
+### SageMaker Security
+* __Security of the cloud__ – AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud.
+* __Security in the cloud__ – Your responsibility is determined by the AWS service that you use.
+* Access Control
+  * Amazon SageMaker Studio notebooks and SageMaker notebook instances differ in their runtime environments.
+	* Amazon SageMaker Studio uses filesystem and container permissions for access control and isolation of Studio users and notebooks. This is one of the major differences between Studio notebooks and SageMaker notebook instances. 
+	* __User isolation__ on EFS - When you onboard to Studio, SageMaker creates an Amazon Elastic File System (EFS) volume for your domain that is shared by all Studio users in the domain. Each user gets their own private home directory on the EFS volume. This home directory is used to store the user's notebooks, Git repositories, and other data. To prevent other users in the domain from accessing the user's data, SageMaker creates a globally unique user ID for the user's profile and applies it as a POSIX user/group ID for the user’s home directory.
+  * By default, when you create a notebook instance, users that log into that notebook instance have root access. If you don't want users to have root access to a notebook instance, when you call CreateNotebookInstance or UpdateNotebookInstance operations, set the RootAccess field to Disabled.
+	* To protect your Amazon SageMaker Studio notebooks and SageMaker notebook instances, along with your model-building data and model artifacts, SageMaker encrypts the notebooks, as well as output from Training and Batch Transform jobs. SageMaker encrypts these by default using the AWS Managed Key for Amazon S3. For cross-account access use AWS KMS.
+	* In Amazon SageMaker Studio, your SageMaker Studio notebooks and data can be stored in the following locations: S3, EBS, EFS
+  * Amazon SageMaker ensures that machine learning (ML) model artifacts and other system artifacts are encrypted in transit and at rest
+  * By default, Amazon SageMaker runs training jobs in an Amazon Virtual Private Cloud (Amazon VPC) to help keep your data secure. You can add another level of security to protect your training containers and data by configuring a private VPC.
+	* __Internetwork Traffic Privacy__ - By default, API calls made to published endpoints traverse the public network to the request router. SageMaker supports Amazon Virtual Private Cloud interface endpoints powered by AWS PrivateLink for private connectivity between the customer's VPC and the request router to access hosted model endpoints.
+	* __Identity-based policies__ are JSON permissions policy documents that you can attach to an identity, such as an IAM user, group of users, or role.
+	* __Resource-based policies__ are JSON policy documents that you attach to a resource. Examples of resource-based policies are IAM role trust policies and Amazon S3 bucket policies. 
+	* __Access control lists (ACLs)__ control which principals (account members, users, or roles) have permissions to access a resource.
+	* Actions like passing a role between services are a common function within SageMaker.You pass the role (iam:PassRole) when making these API calls.
+	* Amazon SageMaker Studio and SageMaker notebook instances allow direct internet access by default. You can choose to restrict which traffic can access the internet by launching your Amazon SageMaker Studio and SageMaker notebook instances in a Amazon Virtual Private Cloud (Amazon VPC).
+	* To control access to your data and job containers, we recommend that you create a private VPC and configure it so that they aren't accessible over the internet.
+
+### SageMaker Monitoring
+* __Amazon CloudWatch__ monitors your AWS resources and the applications that you run on AWS in real time. You can collect and track metrics, create customized dashboards, and set alarms that notify user. For example, you can have CloudWatch track CPU usage or other metrics of your Amazon EC2 instances and automatically launch new instances when needed. 
+
+* __Amazon CloudWatch Logs__ enables you to monitor, store, and access your log files from EC2 instances, AWS CloudTrail, and other sources. 
+
+* __AWS CloudTrail__ captures API calls and related events made by or on behalf of your AWS account and delivers the log files to an Amazon S3 bucket that you specify. You can identify which users and accounts called AWS, the source IP address from which the calls were made, and when the calls occurred.
+
+* __Amazon EventBridge__ monitors status change events in Amazon SageMaker. EventBridge enables you to automate SageMaker and respond automatically to events such as a training job status change or endpoint status change. Events from SageMaker are delivered to EventBridge in near real time. You can write simple rules to indicate which events are of interest to you, and what automated actions to take when an event matches a rule.
+
+* __Amazon SageMaker__ provides APIs, SDKs, and a command line interface that you can use to create and manage notebook instances and train and deploy models.
