@@ -203,9 +203,8 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
 | __Logistical Regression__ | To predict one of the two states, such as true or false | 
 | __Multiclass Regression__ | Model is to predict a pre-defined set of values |
 | __Linear Regression__ | Model is to predict a numerical value |
-| __Support Vector Machine__ | Classification problem eg., high valued customer vs other customer |
 | __Factorization Machines Algorithm__ | is designed to capture interactions between features within high dimensional sparse datasets economically. |
-| __Support Vector Machine__ | Support vector machines (SVMs) are a set of supervised learning methods used for classification, regression and outliers detection. |
+| __Support Vector Machines__ | are a set of supervised learning methods used for classification, regression and outliers detection. |
 | __XGBoost__ | Open source implementation of the gradient boosted trees algorithm that attempts to accurately predict a target variable by combining the estimates of a set of simpler, weaker models |
 | __K-Nearest Neighbors (k-NN)__ | is an index based algorithm for classification and regression. Training has three steps sampling, dimension reduction and index building |
 | __Object2Vec__ | is a general-purpose neural embedding algorithm that is highly customizable | 
