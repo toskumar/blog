@@ -37,9 +37,9 @@ __Inheritance__ is a process of extending the features and behavior of one class
 class MyBike extends Bike {
   Color color;
   Horn horn;
-  MyBike(Color color, Horn horn) {
-    this.color = color;
-    this.horn = horn;
+  MyBike() {
+    this.color = new Color(BLACK);
+    this.horn = new Horn(HONK);
   }
 }
 ```
