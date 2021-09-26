@@ -52,10 +52,7 @@ class Printer {
 ```
 ### OOPS example
 ```java
-package com.java.feature;
-
 public class MyDevice {
-
 	public static void main(String arg[]) {
 		Epson2010 e2010 = new Epson2010();
 		e2010.model();
