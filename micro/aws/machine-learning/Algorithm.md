@@ -198,47 +198,50 @@ A virtual _Swiss army knife_ for all sorts of regression, classification and ran
  
 
 ### Supervised Learning 
-| Algorithm | Problem | Input Data Format |
-| --- | --- | --- | 
-| __Logistical Regression__ | Regression, Binary | csv |
-| __Linear Regression__ | Regression, Classification | csv |
-| __Support Vector Machine__ | Classification problem eg., high valued customer vs other customer | csv |
-| __Factorization Machines Algorithm__ | is designed to capture interactions between features within high dimensional sparse datasets economically. | csv | 
-| __XGBoost__ | Regression, Classification and Ranking. Implementation of the gradient-boosted trees algorithm | csv, libsvm |
-| __K-Nearest Neighbors (k-NN)__ | is an index based algorithm for classification and regression. Training has three steps sampling, dimension, reduction and index building |  json, csv, recordio|
-| __Object2Vec__ | is a general-purpose neural embedding algorithm that is highly customizable |  input and output is a sequence of token eg., text or audio|
-| __DeepAR Forecasting__ | forecasting, time series using RNN| json, parquet |
-| __Decision Trees__ | Binary, Numeric, Classification | csv |
-| __Random Forest__ | It is a collection of Decision Trees to solve Binary, Classification problems | csv |
+| Algorithm | Problem | 
+| --- | --- |
+| __Logistical Regression__ | To predict one of the two states, such as true or false | 
+| __Multiclass Regression__ | Model is to predict a pre-defined set of values |
+| __Linear Regression__ | Model is to predict a numerical value |
+| __Support Vector Machine__ | Classification problem eg., high valued customer vs other customer |
+| __Factorization Machines Algorithm__ | is designed to capture interactions between features within high dimensional sparse datasets economically. |
+| __Support Vector Machine__ | Support vector machines (SVMs) are a set of supervised learning methods used for classification, regression and outliers detection. |
+| __XGBoost__ | Regression, Classification and Ranking. Implementation of the gradient-boosted trees algorithm |
+| __K-Nearest Neighbors (k-NN)__ | is an index based algorithm for classification and regression. Training has three steps sampling, dimension reduction and index building |
+| __Object2Vec__ | is a general-purpose neural embedding algorithm that is highly customizable | 
+| __DeepAR Forecasting__ | forecasting, time series using RNN|
+| __Decision Trees__ | uses the tree representation to solve the problem in which each leaf node corresponds to a class label and attributes are represented on the internal node of the tree |
+| __Random Forest__ | It is a collection of Decision Trees to solve Binary, Classification problems |
 
 ### Unsupervised Learning
 
-| Algorithm | Problem | Input Data Format |
-| --- | --- | --- | 
-| __Principal Component Analysis (PCA)__ |It lowers the dimensionality within a dataset by projecting data points onto the primary few principal components. The aim is to keep as much information or variation as possible | csv, json, recordIO |
-| __K-Means__ | It is used to finds discrete groupings within the dataset, where members of a group are as identical as possible to one another and as non-identical as possible from members of other groups.(Classification) | csv, json, recordIO |
-| __IP Insights__ | It is used to capture associations b/w IPv4 addresses and various entities | csv, json|
-| __Random Cut Forest (RCF)__ | It identifies anomalous data points within a data set | csv, recordIO |
+| Algorithm | Problem |
+| --- | --- |
+| __Principal Component Analysis (PCA)__ |It lowers the dimensionality within a dataset by projecting data points onto the primary few principal components. The aim is to keep as much information or variation as possible | 
+| __K-Means__ | It is used to finds discrete groupings within the dataset, where members of a group are as identical as possible to one another and as non-identical as possible from members of other groups.(Classification) | 
+| __IP Insights__ | It is used to capture associations b/w IPv4 addresses and various entities | 
+| __Random Cut Forest (RCF)__ | It identifies anomalous data points within a data set | 
 
 ### Textual Analysis
 
-| Algorithm | Problem | Input Data Format |
-| --- | --- | --- | 
-| __BlazingText (Supervised)__  | It is a highly advanced application of the Word2vec and text classification algorithms that simply scale to large datasets. It is helpful for many downstream NLP tasks. | json, text |
-| __Sequence-to-Sequence (Supervised)__ | input and output is a sequence of token eg., text, audio | json, recordIO |
-| __Latent Dirichlet Allocation (Unsupervised)__ | an algorithm used for determining topics in a set of documents. |csv, json, recordIO |
-| __Neural Topic Model (Unsupervised)__ | used for determining topics in a set of documents, using a NN approach.| csv, json, recordIO |
+| Algorithm | Problem |
+| --- | --- | 
+| __BlazingText (Supervised)__  | It is a highly advanced application of the Word2vec and text classification algorithms that simply scale to large datasets. It is helpful for many downstream NLP tasks. | 
+| __Sequence-to-Sequence (Supervised)__ | input and output is a sequence of token eg., text, audio | 
+| __Latent Dirichlet Allocation (Unsupervised)__ | an algorithm used for determining topics in a set of documents. |
+| __Neural Topic Model (Unsupervised)__ | used for determining topics in a set of documents, using a NN approach.| 
 
 ### Image Analysis (Supervised)
 
-| Algorithm | Problem | Input Data Format |
-| --- | --- | --- | 
-| __Image Classification__  | Determine the classification of an image. | png, jpeg, recordIO |
-| __Object Detection__ | It is used to classifies and detect objects in images using a single DNN (deep neural network)  | png, jpeg, recordIO |
-| __Semantic Segmentation__ | It's used to developing computer vision applications using a pixel-level, fine-grained approach. identifies shapes within an image.| png, jpeg, recordIO |
+| Algorithm | Problem | 
+| --- | --- | 
+| __Image Classification__  | Determine the classification of an image. | 
+| __Object Detection__ | It is used to classifies and detect objects in images using a single DNN (deep neural network)  | 
+| __Semantic Segmentation__ | It's used to developing computer vision applications using a pixel-level, fine-grained approach. identifies shapes within an image.| 
 
 ### Reinforcement Learning
 
-| Algorithm | Problem | Input Data Format |
-| --- | --- | --- | 
-| __Markov Decision Process__ | MDPs aim to capture high-level details of a real problem that a learning agent encounters over some period of time in attempting to achieve some ultimate goal. |  |
+| Algorithm | Problem | 
+| --- | --- | 
+| __Markov Decision Process__ | MDPs aim to capture high-level details of a real problem that a learning agent encounters over some period of time in attempting to achieve some ultimate goal. | 
+

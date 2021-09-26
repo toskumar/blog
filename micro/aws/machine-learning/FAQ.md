@@ -12,12 +12,17 @@
 * __Feature Engineering__ 
   * __Feature engineering__ is the process of using domain knowledge to extract features from raw data.
   * __Feature selection__ is the process of selecting a subset of relevant features for use in model
-  * __Replace missing data__ is knows as imputation. Common strategy is to replace missing data with mean or median value. It is important to understand your data before choosing a strategy for replacing missing values.
+  * __Replace missing data__ is knows as imputation. 
+    * Replace missing data with mean or median for numeric feature and there is no correlation between feature. 
+    * Use supervised learning algorithm like KNN, Multivariate Imputation by Chained Equation (MICE), Deep Learning when there is correlation between feature.
   * __Forming Cartesian products__ of one variable with another variable eg., variable A, B, C with Z => A_Z, B_Z and C_Z 
   * __Binning__ numeric variables to categories eg., the continuous numeric feature age is not linearly correlated with the likelihood to purchase a book
   * __Domain-specific__ features eg., l, b, h and introduce v=l*b*h
   * __Variable-specific__ a sentence has generic ways of processing. eg., forming n-grams from text “the fox jumped over the fence”
- 
+* __Feature Scaling__
+  * __Normalization__ is a scaling technique in which values are shifted and rescaled, range between 0 and 1. X'=[X-X(min)]/[X(max)-X(min)]
+  * __Standardization__ is another scaling technique where the values are centered around the mean with a unit standard deviation. X'=(X-X')/SD
+
 * __Learning Algorithm__ The learning algorithm’s task is to learn the weights for the model. It consists of a loss function and an optimization technique (to reduce the loss). The optimization technique used in Amazon ML is online Stochastic Gradient Descent (SGD).
   * For __binary classification__ , Amazon ML uses logistic regression (logistic loss function + SGD).
   * For __multiclass classification__ , Amazon ML uses multinomial logistic regression (multinomial logistic loss + SGD).
@@ -64,8 +69,8 @@
   | |Recall = TP/(TP+FN) | FPR=FP/(FP/TN) |
   * __Accuracy__ measures the percentage of correct predictions. Accuracy = (TP + TN)/(TP+FP+FN+TN)
   * __Precision__ Precision shows the percentage of actual positive instance. Precision = TP/(TP+FP)
-  * __Recall__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
-  * __False Positive Rate__ measures the false alarm rate or the fraction of actual negatives that are predicted as positive. FPR = FP/(FP+TN) 
+  * __Recall (Sensitivity or TPR)__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
+  * __False Positive Rate (Specificity)__ measures the false alarm rate or the fraction of actual negatives that are predicted as positive. FPR = FP/(FP+TN) 
 
 ## ML Framework
 * __TensorFlow__ is a ML Framework developed by __Google__ and __Keras__ is an opensource API interface for TersorFlow 
@@ -76,13 +81,19 @@
 
 * __Scikit Learn__ is the most useful and robust library for machine learning in Python.
 
+## ML File format 
+* __File Mode__ Load data from S3 to training instance volume
+* __Pipe Mode__ Stream data from S3 using recordIO-protobuf
+* __RecordIO__ is a binary data exchange format where data is divided into chunks called records and prepend its length followed by the data.
+* __Parquet__ column-oriented data storage format of the Apache Hadoop ecosystem. 
+
 ## AWS AI and ML Services
 
 * __Amazon Lex__ is a service for building conversational interfaces into any application using voice and text.
-* __Amazon Polly__ is a service that turns text into lifelike speech, allowing you to create applications that talk, and build entirely new categories of speech-enabled products. 
+* __Amazon Polly__ is a service that turns text into lifelike speech, allowing you to create applications that talk, and build entirely new categories of speech-enabled products. Supports Speech Synthesis Markup Language (SSML) tags which can adjust the speech rate, pitch or volume. Also supports pronunciation lexicons to customize the pronunciation of words.
 * __Amazon Translate__ is a neural machine translation service that delivers fast, high-quality, affordable, and customizable language translation. 
 * __Amazon Textract__ is a machine learning service that automatically extracts text, handwriting and data from scanned documents that goes beyond simple optical character recognition (OCR) to identify, understand, and extract data from forms and tables.
-* __Amazon Transcribe__ makes it easy for developers to add speech to text capabilities to their applications.
+* __Amazon Transcribe__ makes it easy for developers to add __speech to text__ capabilities to their applications.
 * __Amazon Forecast__ is a fully managed service that uses machine learning to deliver highly accurate forecasts.
 * __Amazon Comprehend__ is a natural-language processing (NLP) service that uncover the meaning and relationships in text from customer support incidents, product reviews, social media feeds, news articles and documents.
 * __Amazon Rekognition__ makes it easy to add image and video analysis to your applications.
@@ -106,8 +117,7 @@
 * __Normalization Transformation__ The normalization transformer normalizes numeric variables to have a mean of zero and variance of one.
 * __Cartesian Product Transformation__ {"A", "B", "C"}X{"Z"} = {"A_Z", "B_Z", "C_Z"}
 
-
-### MLto S3 permission
+### ML to S3 permission
 * To read data from S3 Grant __GetObject__ and __ListBucket__ permission
 * To write into S3 Grant __GetObject__ , __PutObject__ , __PutObjectAcl__ and __ListBucket__
 
