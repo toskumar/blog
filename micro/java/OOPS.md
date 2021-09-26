@@ -52,51 +52,66 @@ class Printer {
 ```
 ### OOPS example
 ```java
+package com.java.feature;
+
+public class MyDevice {
+
+	public static void main(String arg[]) {
+		Epson2010 e2010 = new Epson2010();
+		e2010.model();
+		e2010.print();
+
+		Epson3010 e3010 = new Epson3010();
+		e3010.model();
+		e3010.print();
+		e3010.scan();
+		e3010.copy();
+	}
+}
+
 abstract class Printer {
-  abstract void print();
-  abstract void model();
+	abstract void print();
+	abstract void model();
 }
-interface class Scanner {
-  abstract void scan();
+
+interface Scanner {
+	abstract void scan();
 }
-interface class Copier {
-  abstract void copy();
+
+interface Copier {
+	abstract void copy();
 }
 
 abstract class SingleUsePrinter extends Printer {
-  void print() {
-    System.out.println("SingleUsePrinter printing ...");
-  }
-  void model() {
-    System.out.println("SingleUsePrinter");
-  }
+	void print() {
+		System.out.println("SingleUsePrinter printing ...");
+	}
 }
 
 abstract class MultiUsePrinter extends Printer implements Scanner, Copier {
-  void print() {
-    System.out.println("MultiUsePrinter printing ...");
-  }
-  void scan() {
-    System.out.println("MultiUsePrinter scanning ...");
-  }
-  void copy() {
-    System.out.println("MultiUsePrinter copying ...");
-  }
-  void model() {
-    System.out.println("MultiUsePrinter");
-  }
+	void print() {
+		System.out.println("MultiUsePrinter printing ...");
+	}
+
+	public void scan() {
+		System.out.println("MultiUsePrinter scanning ...");
+	}
+
+	public void copy() {
+		System.out.println("MultiUsePrinter copying ...");
+	}
 }
 
-class Epson3010 extends SingleUsePrinter {
-  void model() {
-    super.model();
-    System.out.println("Epson Model 3010");
-  }
+class Epson2010 extends SingleUsePrinter {
+	void model() {
+		System.out.println("Category: SingleUsePrinter, Model: Epson Model 2010");
+	}
 }
-class Epson2010 extends MultiUsePrinter {
-  void model() {
-    super.model();
-    System.out.println("Epson Model 2010");
-  }
+
+class Epson3010 extends MultiUsePrinter {
+	void model() {
+		System.out.println("Category: MultiUsePrinter, Model: Epson Model 3010");
+	}
 }
+
 ```
