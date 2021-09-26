@@ -23,7 +23,7 @@ class Circle {
 __Abstraction__ is a process of hiding certain details and showing only essential information to the user.
 ```java
 abstract class Bike {
- Engine engine;
+ Engine engine = new Engine();
  void start(){
   this.engine.start();
  }
@@ -32,11 +32,15 @@ abstract class Bike {
  }
 }
 ```
-__Inheritance__ is a process of extending the features and behaviour of one class to another class
+__Inheritance__ is a process of extending the features and behavior of one class to another class
 ```java
 class MyBike extends Bike {
   Color color;
   Horn horn;
+  MyBike(Color color, Horn horn) {
+    this.color = color;
+    this.horn = horn;
+  }
 }
 ```
 __polymorphism__ the ability of an object to take many forms
