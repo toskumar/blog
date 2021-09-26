@@ -30,6 +30,7 @@ abstract class Bike {
  void stop() {
     this.engine.stop()
  }
+ abstract void ride();
 }
 ```
 __Inheritance__ is a process of extending the features and behavior of one class to another class
@@ -41,9 +42,12 @@ class MyBike extends Bike {
     this.color = new Color(BLACK);
     this.horn = new Horn(HONK);
   }
+  void ride() {
+    Sysout.out.println("I'm riding my bike");
+  }
 }
 ```
-__polymorphism__ the ability of an object to take many forms
+__polymorphism__ the ability of an object to take many forms eg., method overriding and method overloading
 ```java
 class Printer {
    void print(Document doc) {
