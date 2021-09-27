@@ -87,35 +87,35 @@ interface Copier {
 	abstract void copy();
 }
 
-abstract class SingleUsePrinter extends Printer {
+abstract class SingleFunctionPrinter extends Printer {
 	void print() {
-		System.out.println("SingleUsePrinter printing ...");
+		System.out.println("SingleFunctionPrinter printing ...");
 	}
 }
 
-abstract class MultiUsePrinter extends Printer implements Scanner, Copier {
+abstract class MultiFunctionPrinter extends Printer implements Scanner, Copier {
 	void print() {
-		System.out.println("MultiUsePrinter printing ...");
+		System.out.println("MultiFunctionPrinter printing ...");
 	}
 
 	public void scan() {
-		System.out.println("MultiUsePrinter scanning ...");
+		System.out.println("MultiFunctionPrinter scanning ...");
 	}
 
 	public void copy() {
-		System.out.println("MultiUsePrinter copying ...");
+		System.out.println("MultiFunctionPrinter copying ...");
 	}
 }
 
-class Epson2010 extends SingleUsePrinter {
+final class Epson2010 extends SingleFunctionPrinter {
 	void model() {
-		System.out.println("Category: SingleUsePrinter, Model: Epson Model 2010");
+		System.out.println("Category: SingleFunctionPrinter, Model: Epson Model 2010");
 	}
 }
 
-class Epson3010 extends MultiUsePrinter {
+final class Epson3010 extends MultiFunctionPrinter {
 	void model() {
-		System.out.println("Category: MultiUsePrinter, Model: Epson Model 3010");
+		System.out.println("Category: MultiFunctionPrinter, Model: Epson Model 3010");
 	}
 }
 
