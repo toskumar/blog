@@ -74,12 +74,13 @@
 
 ## ML Framework
 * __TensorFlow__ is a ML Framework developed by __Google__ and __Keras__ is an opensource API interface for TersorFlow 
-
 * __MXNet__ is a ML/DL Framework developed by __AWS and Microsoft__ and __Gluon__ is an opensource API interface for MXNet  
-
 * __PyTorch__ is an opensource library used by Facebook AI research lab.
-
 * __Scikit Learn__ is the most useful and robust library for machine learning in Python.
+* __Apache Spark__ used for preprocessing data. Apache Spark library is available in both Python and Scala, that can be used to train models in SageMaker.
+* __Hugging Face__ Amazon SageMaker enables customers to train, fine-tune, and run inference using Hugging Face models for Natural Language Processing (NLP) on SageMaker
+* __Chainer__ SageMaker to train and deploy a model using custom Chainer code
+* __R__ SageMaker notebook instances support R using a pre-installed R kernel
 
 ## ML File format 
 * __File Mode__ Load data from S3 to training instance volume
@@ -130,7 +131,7 @@
   * __SageMaker Model Registry__ - Versioning, artifact and lineage tracking, approval workflow, and cross account support
   * __SageMaker Projects__ - Create end-to-end ML solutions with CI/CD by using SageMaker projects.
   * __SageMaker Model Building Pipelines__ - Create and manage machine learning pipelines integrated directly with SageMaker jobs.
-  * __SageMaker ML Lineage Tracking__ - Track the lineage of machine learning workflows. 
+  * __SageMaker ML Lineage Tracking__ - creates and stores information about the steps of a machine learning (ML) workflow from data preparation to model deployment. 
   * __SageMaker Data Wrangler__ - Import, analyze, prepare, and featurize data in SageMaker Studio.
   * __SageMaker Feature Store__ - A centralized store for features and associated metadata so features can be easily discovered and reused. Two type of stores - online(realtime) and offline(batch) inference
   * __SageMaker JumpStart__ - Learn about SageMaker features and capabilities through curated 1-click solutions, example notebooks, and pretrained models that you can deploy.
@@ -148,7 +149,9 @@
   * __Reinforcement Learning__ - Maximize the long-term reward that an agent receives as a result of its actions.
   * __Preprocessing__ - Analyze and preprocess data, tackle feature engineering, and evaluate models.
   * __Batch Transform__ - Preprocess datasets, run inference when you don't need a persistent endpoint, and associate input records with inferences to assist the interpretation of results.
-
+  * __Authentication__ - Onboard SageMaker Studio using SSO Authentication or IAM Authentication
+  * __VPC__ - SageMaker Studio uses two VPCs. One VPC is managed by Amazon SageMaker and provides direct internet access. You specify the other VPC, which provides encrypted traffic between the domain and your Amazon Elastic File System (EFS) volume.
+  
 ### SageMaker Security
 * __Security of the cloud__ – AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud.
 * __Security in the cloud__ – Your responsibility is determined by the AWS service that you use.
