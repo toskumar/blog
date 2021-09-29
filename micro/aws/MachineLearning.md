@@ -11,11 +11,14 @@ Machine learning algorithms build a model based on sample data, known as "traini
 - Supervised learning
   - Presented with example inputs and their desired outputs, given by a "teacher", and the goal is to learn a general rule that maps inputs to outputs.
   - Supervised learning refers to using a set of input variables to predict the value of a labeled output variable.
+  - The goal of supervised learning techniques is to find the right answer based on the patterns in the training data.
 - Unsupervised learning
-  -  No labels are given to the learning algorithm, leaving it on its own to find structure in its input. Unsupervised learning can be a goal in itself (discovering hidden patterns in data) or a means towards an end
+  -  No labels are given to the learning algorithm, leaving it on its own to find structure in its input. Unsupervised learning can be a goal in itself (discovering hidden patterns in data) or a means towards an end.
+  - The goal of unsupervised learning techniques is to find similarities and differences between data points
 - Reinforcement learning
   - is a feedback-based learning method, in which a learning agent gets a reward for each right action and gets a penalty for each wrong action. The agent learns automatically with these feedbacks and improves its performance.
   - interacts with a dynamic environment in which it must perform a certain goal (such as driving a vehicle or playing a game against an opponent)
+  - The goal of reinforcement learning techniques is to learn how to achieve a desired outcome even when it is not clear how to accomplish that outcome
   
 - Supervised Learning Classification
   - Binary classification - predicting one of two possible outcomes eg., is an email a spam or not

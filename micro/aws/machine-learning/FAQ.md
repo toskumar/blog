@@ -108,6 +108,8 @@
 * __Amazon SageMaker Ground Truth__ is a fully managed data labeling service that makes it easy to build highly accurate training datasets for machine learning.
 * __Amazon SageMaker Neo__ enables developers to optimize machine learning (ML) models for inference on SageMaker in the cloud and supported devices at the edge.
 * __Amazon Augmented AI__ is a machine learning service which makes it easy to build the workflows required for human review.
+* __AWS PrivateLink__ provides private connectivity between VPCs, AWS services, and your on-premises networks, without exposing your traffic to the public internet. AWS PrivateLink makes it easy to connect services across different accounts and VPCs to significantly simplify your network architecture.
+* __VPC endpoint__ enables connections between a virtual private cloud (VPC) and supported services, without requiring that you use an internet gateway, NAT device, VPN connection, or AWS Direct Connect connection. Therefore, your VPC is not exposed to the public internet.  A VPC endpoint for Amazon S3 is a logical entity within a VPC that allows connectivity only to Amazon S3. 
 
 ### Data transformation
 * __N-gram Transformation__ ngram(var1, 2) = {"I really enjoined"} = {"I really", "really enjoined", "I", "really", "enjoined"} 
@@ -126,6 +128,13 @@
 
 * Amazon SageMaker is a fully managed machine learning service. With SageMaker, data scientists and developers can quickly and easily build and train machine learning models, and then directly deploy them into a production-ready hosted environment.
 
+* __SageMaker Model building steps__
+__Prepare__ - Data Wrangler, Feature Store, Ground Truth, Clarify
+__Build__ - Studio, AutoPilot, JumpStart
+__Train & Tune__ - Experiment, Debugger, Distributed Training
+__Deploy & Manage__ - Pipelines, Model Monitor, Kubernetes Integration, Edge Manager, Neo
+ 
+
 * __SageMaker Features__
   * __SageMaker Studio__ - An integrated machine learning environment where you can build, train, deploy, and analyze your models all in the same application.
   * __SageMaker Model Registry__ - Versioning, artifact and lineage tracking, approval workflow, and cross account support
@@ -142,15 +151,20 @@
   * __SageMaker Studio Notebooks__ - The next generation of SageMaker notebooks that include AWS Single Sign-On (AWS SSO) integration, fast start-up times, and single-click sharing.
   * __SageMaker Experiments__ - Experiment management and tracking.
   * __SageMaker Debugger__ - Inspect training parameters and data throughout the training process.
-  * __SageMaker Autopilot__ - Users without machine learning knowledge can quickly build classification and regression models.
+  * __SageMaker Autopilot__ - Users without machine learning knowledge can quickly build classification and regression models. Autopilot supports 2 built-in algorithms at launch: XGBoost and Linear Learner.
   * __SageMaker Model Monitor__ - Monitor and analyze models in production (endpoints) to detect data drift and deviations in model quality.
   * __SageMaker Neo__ - Train machine learning models once, then run anywhere in the cloud and at the edge.
   * __SageMaker Elastic Inference__ - Speed up the throughput and decrease the latency of getting real-time inferences.
   * __Reinforcement Learning__ - Maximize the long-term reward that an agent receives as a result of its actions.
   * __Preprocessing__ - Analyze and preprocess data, tackle feature engineering, and evaluate models.
+  * __Distributed training__ libraries automatically split large deep learning models and training datasets across AWS GPU instances in a fraction of the time
   * __Batch Transform__ - Preprocess datasets, run inference when you don't need a persistent endpoint, and associate input records with inferences to assist the interpretation of results.
   * __Authentication__ - Onboard SageMaker Studio using SSO Authentication or IAM Authentication
   * __VPC__ - SageMaker Studio uses two VPCs. One VPC is managed by Amazon SageMaker and provides direct internet access. You specify the other VPC, which provides encrypted traffic between the domain and your Amazon Elastic File System (EFS) volume.
+  * __Kubernetes__ is an open source system used to automate the deployment, scaling, and management of containerized applications. 
+  * __Kubeflow__ Pipelines is a workflow manager that offers an interface to manage and schedule machine learning (ML) workflows on a Kubernetes cluster. 
+  * __Automatic Model Tuning__ is supported in SageMaker for all built-in algorithm and arbitrary algorithm through Docker images. Bayesian Optimization is used a Model tuning algorithm.
+ 
   
 ### SageMaker Security
 * __Security of the cloud__ – AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud.
