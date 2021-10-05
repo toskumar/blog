@@ -15,10 +15,10 @@ Data > Algorithm > Computation> Feedback > Model > Generalization
 
 ### Confusion Matrix
   
-  |Predicted/Actual | True | False |
+  |Actual/Predicted | True | False |
   | --- | --- | --- | 
-  | True | I predicted correctly!        | I was wrong (False Positive) (Type I error)|
-  | False| I was wrong. (False Negative) (Type II error) | I predicted Correctly! |
+  | True | I predicted correctly! (True Positive)        | I was wrong (False Negative) (Type II error)|
+  | False| I was wrong. (False Positive) (Type I error) | I predicted Correctly! (True Negative) |
 
 ### Cascading Algorithm
 __Problem__ What is the estimated basket size of shoppers who response to our email promotion ?
