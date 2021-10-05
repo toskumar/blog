@@ -74,8 +74,8 @@ Transforming numeric values within our data so Machine Learning algorithms can b
 ### Handling Missing Values
 Missing values in your dataset can be just as frustrating and interfere with analysis and your models prediction. Missing data can be represented in many different ways (null, NaN,NA, None, etc.) Replacing missing values is known as Imputation.
 
-* Missing at Random (MAR) - means that the prepensity for a data point to be missing is not related to the missing data but it is related to some of the observed data
 * Missing Completely at Random (MCAR) - the fact that a certain value is missing has nothing to do with its hypothetical value and with the values of other variables. 
+* Missing at Random (MAR) - means that the prepensity for a data point to be missing is not related to the missing data but it is related to some of the observed data
 * Missing not at Random (MNAR) - two possible reasons are that the missing value depends on the hypothetical value or missing value is dependent on some other variable's value. 
 
 * Techniques for replacing missing values 
