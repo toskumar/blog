@@ -18,12 +18,12 @@
   * __Forming Cartesian products__ of one variable with another variable eg., variable A, B, C with Z => A_Z, B_Z and C_Z 
   * __Binning__ numeric variables to categories eg., the continuous numeric feature age is not linearly correlated with the likelihood to purchase a book
   * __Domain-specific__ features eg., l, b, h and introduce v=l*b*h
-  * __Variable-specific__ a sentence has generic ways of processing. eg., forming n-grams from text ìthe fox jumped over the fenceî
+  * __Variable-specific__ a sentence has generic ways of processing. eg., forming n-grams from text ‚Äúthe fox jumped over the fence‚Äù
 * __Feature Scaling__
   * __Normalization__ is a scaling technique in which values are shifted and rescaled, range between 0 and 1. X'=[X-X(min)]/[X(max)-X(min)]
   * __Standardization__ is another scaling technique where the values are centered around the mean with a unit standard deviation. X'=(X-X')/SD
 
-* __Learning Algorithm__ The learning algorithmís task is to learn the weights for the model. It consists of a loss function and an optimization technique (to reduce the loss). The optimization technique used in Amazon ML is online Stochastic Gradient Descent (SGD).
+* __Learning Algorithm__ The learning algorithm‚Äôs task is to learn the weights for the model. It consists of a loss function and an optimization technique (to reduce the loss). The optimization technique used in Amazon ML is online Stochastic Gradient Descent (SGD).
   * For __binary classification__ , Amazon ML uses logistic regression (logistic loss function + SGD).
   * For __multiclass classification__ , Amazon ML uses multinomial logistic regression (multinomial logistic loss + SGD).
   * For __regression__ , Amazon ML uses linear regression (squared loss function + SGD).
@@ -64,9 +64,9 @@
 
   |Actual/Predicted | Predicted True | Predicted False | |
   | --- | --- | --- | --- | 
-  | __Actual True__ | I predicted correctly! (True Positive)     | I was wrong (False Positive) (Incorrectly predicted a positive case) (Type I error) | Precision = TP/(TP+FP) |
-  | __Actual False__ | I was wrong. (False Negative) (Incorrectly predicted a negative case) (Type II error) | I predicted Correctly! (True Negative)| - |
-  | | Recall = TP/(TP+FN) | FPR=FP/(FP/TN) or TNR=TN/(TN+FP) | Accuracy = (TP + TN)/(TP+FP+FN+TN) |
+  | __Actual True__ | I predicted correctly! (True Positive)     | I was wrong. (False Negative) (Incorrectly predicted a negative case) (Type II error) miss, under-estimating | Recall = TP/(TP+FN) |
+  | __Actual False__ | I was wrong (False Positive) (Incorrectly predicted a positive case) (Type I error) false alarm, over-estimating | I predicted Correctly! (True Negative)| - |
+  | | Precision = TP/(TP+FP) | FPR=FP/(FP/TN) or TNR=TN/(TN+FP) | Accuracy = (TP + TN)/(TP+FP+FN+TN) |
   * __Accuracy__ measures the percentage of correct predictions. Accuracy = (TP + TN)/(TP+FP+FN+TN)
   * __Precision__ Precision shows the percentage of actual positive instance. Precision = TP/(TP+FP)
   * __Recall (Sensitivity or TPR)__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
@@ -100,7 +100,7 @@
 * __Amazon Rekognition__ makes it easy to add image and video analysis to your applications.
 * __Amazon Personalize__ is a fully managed machine learning service that goes beyond rigid static rule based recommendation systems.
 * __Amazon Fraud Detector__ is a fully managed service that uses machine learning (ML) and more than 20 years of fraud detection expertise from Amazon, to identify potentially fraudulent activity.
-* __Amazon CodeGuru__ is a developer tool that provides intelligent recommendations to improve code quality and identify an applicationís most expensive lines of code.
+* __Amazon CodeGuru__ is a developer tool that provides intelligent recommendations to improve code quality and identify an application‚Äôs most expensive lines of code.
 * __Amazon Kendra__ is an intelligent search service powered by machine learning.
 * __Amazon Deep Learning AMIs__ provide machine learning practitioners and researchers with the infrastructure and tools to accelerate deep learning in the cloud, at any scale. 
 
@@ -167,12 +167,12 @@ __Deploy & Manage__ - Pipelines, Model Monitor, Kubernetes Integration, Edge Man
  
   
 ### SageMaker Security
-* __Security of the cloud__ ñ AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud.
-* __Security in the cloud__ ñ Your responsibility is determined by the AWS service that you use.
+* __Security of the cloud__ ‚Äì AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud.
+* __Security in the cloud__ ‚Äì Your responsibility is determined by the AWS service that you use.
 * Access Control
   * Amazon SageMaker Studio notebooks and SageMaker notebook instances differ in their runtime environments.
 	* Amazon SageMaker Studio uses filesystem and container permissions for access control and isolation of Studio users and notebooks. This is one of the major differences between Studio notebooks and SageMaker notebook instances. 
-	* __User isolation__ on EFS - When you onboard to Studio, SageMaker creates an Amazon Elastic File System (EFS) volume for your domain that is shared by all Studio users in the domain. Each user gets their own private home directory on the EFS volume. This home directory is used to store the user's notebooks, Git repositories, and other data. To prevent other users in the domain from accessing the user's data, SageMaker creates a globally unique user ID for the user's profile and applies it as a POSIX user/group ID for the userís home directory.
+	* __User isolation__ on EFS - When you onboard to Studio, SageMaker creates an Amazon Elastic File System (EFS) volume for your domain that is shared by all Studio users in the domain. Each user gets their own private home directory on the EFS volume. This home directory is used to store the user's notebooks, Git repositories, and other data. To prevent other users in the domain from accessing the user's data, SageMaker creates a globally unique user ID for the user's profile and applies it as a POSIX user/group ID for the user‚Äôs home directory.
   * By default, when you create a notebook instance, users that log into that notebook instance have root access. If you don't want users to have root access to a notebook instance, when you call CreateNotebookInstance or UpdateNotebookInstance operations, set the RootAccess field to Disabled.
 	* To protect your Amazon SageMaker Studio notebooks and SageMaker notebook instances, along with your model-building data and model artifacts, SageMaker encrypts the notebooks, as well as output from Training and Batch Transform jobs. SageMaker encrypts these by default using the AWS Managed Key for Amazon S3. For cross-account access use AWS KMS.
 	* In Amazon SageMaker Studio, your SageMaker Studio notebooks and data can be stored in the following locations: S3, EBS, EFS
