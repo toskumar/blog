@@ -65,8 +65,8 @@
   |Actual/Predicted | Predicted True | Predicted False | |
   | --- | --- | --- | --- | 
   | __Actual True__ | I predicted correctly! (True Positive)     | I was wrong. (False Negative) (Incorrectly predicted a negative case) (Type II error) miss, under-estimating | Recall = TP/(TP+FN) |
-  | __Actual False__ | I was wrong (False Positive) (Incorrectly predicted a positive case) (Type I error) false alarm, over-estimating | I predicted Correctly! (True Negative)| - |
-  | | Precision = TP/(TP+FP) | FPR=FP/(FP/TN) or TNR=TN/(TN+FP) | Accuracy = (TP + TN)/(TP+FP+FN+TN) |
+  | __Actual False__ | I was wrong (False Positive) (Incorrectly predicted a positive case) (Type I error) false alarm, over-estimating | I predicted Correctly! (True Negative)| FPR=FP/(FP/TN) or TNR=TN/(TN+FP) |
+  | | Precision = TP/(TP+FP) | - | Accuracy = (TP + TN)/(TP+FP+FN+TN) |
   * __Accuracy__ measures the percentage of correct predictions. Accuracy = (TP + TN)/(TP+FP+FN+TN)
   * __Precision__ Precision shows the percentage of actual positive instance. Precision = TP/(TP+FP)
   * __Recall (Sensitivity or TPR)__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
