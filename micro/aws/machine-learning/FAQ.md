@@ -18,12 +18,12 @@
   * __Forming Cartesian products__ of one variable with another variable eg., variable A, B, C with Z => A_Z, B_Z and C_Z 
   * __Binning__ numeric variables to categories eg., the continuous numeric feature age is not linearly correlated with the likelihood to purchase a book
   * __Domain-specific__ features eg., l, b, h and introduce v=l*b*h
-  * __Variable-specific__ a sentence has generic ways of processing. eg., forming n-grams from text “the fox jumped over the fence”
+  * __Variable-specific__ a sentence has generic ways of processing. eg., forming n-grams from text "the fox jumped over the fence"
 * __Feature Scaling__
   * __Normalization__ is a scaling technique in which values are shifted and rescaled, range between 0 and 1. X'=[X-X(min)]/[X(max)-X(min)]
   * __Standardization__ is another scaling technique where the values are centered around the mean with a unit standard deviation. X'=(X-X')/SD
 
-* __Learning Algorithm__ The learning algorithm’s task is to learn the weights for the model. It consists of a loss function and an optimization technique (to reduce the loss). The optimization technique used in Amazon ML is online Stochastic Gradient Descent (SGD).
+* __Learning Algorithm__ The learning algorithm's task is to learn the weights for the model. It consists of a loss function and an optimization technique (to reduce the loss). The optimization technique used in Amazon ML is online Stochastic Gradient Descent (SGD).
   * For __binary classification__ , Amazon ML uses logistic regression (logistic loss function + SGD).
   * For __multiclass classification__ , Amazon ML uses multinomial logistic regression (multinomial logistic loss + SGD).
   * For __regression__ , Amazon ML uses linear regression (squared loss function + SGD).
@@ -64,13 +64,14 @@
 
   |Actual/Predicted | Predicted True | Predicted False | |
   | --- | --- | --- | --- | 
-  | __Actual True__ | I predicted correctly! (True Positive)     | I was wrong. (False Negative) (Incorrectly predicted a negative case) (Type II error) miss, under-estimating | Recall = TP/(TP+FN) |
-  | __Actual False__ | I was wrong (False Positive) (Incorrectly predicted a positive case) (Type I error) false alarm, over-estimating | I predicted Correctly! (True Negative)| FPR=FP/(FP/TN) or TNR=TN/(TN+FP) |
+  | __Actual True__ | I predicted correctly! (True Positive)     | I was wrong. (False Negative) (Incorrectly predicted a negative case) (Type II error) miss, under-estimating | Recall/Sensitivity/TPR = TP/(TP+FN) |
+  | __Actual False__ | I was wrong (False Positive) (Incorrectly predicted as positive case) (Type I error) false alarm, over-estimating | I predicted Correctly! (True Negative)| Specificity/TNR=TN/(TN+FP) or FPR=FP/(FP/TN)|
   | | Precision = TP/(TP+FP) | - | Accuracy = (TP + TN)/(TP+FP+FN+TN) |
   * __Accuracy__ measures the percentage of correct predictions. Accuracy = (TP + TN)/(TP+FP+FN+TN)
   * __Precision__ Precision shows the percentage of actual positive instance. Precision = TP/(TP+FP)
-  * __Recall (Sensitivity or TPR)__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
-  * __False Positive Rate (Specificity)__ measures the false alarm rate or the fraction of actual negatives that are predicted as positive. FPR = FP/(FP+TN) 
+  * __Recall/Sensitivity/TPR__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
+  * __Specificity/TNR__ TN/(TN+FP)
+  * __False Positive Rate__ measures the false alarm rate or the fraction of actual negatives that are predicted as positive. FPR = FP/(FP+TN) 
 
 ## ML Framework
 * __TensorFlow__ is a ML Framework developed by __Google__ and __Keras__ is an opensource API interface for TersorFlow 
@@ -100,7 +101,7 @@
 * __Amazon Rekognition__ makes it easy to add image and video analysis to your applications.
 * __Amazon Personalize__ is a fully managed machine learning service that goes beyond rigid static rule based recommendation systems.
 * __Amazon Fraud Detector__ is a fully managed service that uses machine learning (ML) and more than 20 years of fraud detection expertise from Amazon, to identify potentially fraudulent activity.
-* __Amazon CodeGuru__ is a developer tool that provides intelligent recommendations to improve code quality and identify an application’s most expensive lines of code.
+* __Amazon CodeGuru__ is a developer tool that provides intelligent recommendations to improve code quality and identify an applications most expensive lines of code.
 * __Amazon Kendra__ is an intelligent search service powered by machine learning.
 * __Amazon Deep Learning AMIs__ provide machine learning practitioners and researchers with the infrastructure and tools to accelerate deep learning in the cloud, at any scale. 
 
@@ -167,12 +168,12 @@ __Deploy & Manage__ - Pipelines, Model Monitor, Kubernetes Integration, Edge Man
  
   
 ### SageMaker Security
-* __Security of the cloud__ – AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud.
-* __Security in the cloud__ – Your responsibility is determined by the AWS service that you use.
+* __Security of the cloud__ AWS is responsible for protecting the infrastructure that runs AWS services in the AWS Cloud.
+* __Security in the cloud__ Your responsibility is determined by the AWS service that you use.
 * Access Control
   * Amazon SageMaker Studio notebooks and SageMaker notebook instances differ in their runtime environments.
 	* Amazon SageMaker Studio uses filesystem and container permissions for access control and isolation of Studio users and notebooks. This is one of the major differences between Studio notebooks and SageMaker notebook instances. 
-	* __User isolation__ on EFS - When you onboard to Studio, SageMaker creates an Amazon Elastic File System (EFS) volume for your domain that is shared by all Studio users in the domain. Each user gets their own private home directory on the EFS volume. This home directory is used to store the user's notebooks, Git repositories, and other data. To prevent other users in the domain from accessing the user's data, SageMaker creates a globally unique user ID for the user's profile and applies it as a POSIX user/group ID for the user’s home directory.
+	* __User isolation__ on EFS - When you onboard to Studio, SageMaker creates an Amazon Elastic File System (EFS) volume for your domain that is shared by all Studio users in the domain. Each user gets their own private home directory on the EFS volume. This home directory is used to store the user's notebooks, Git repositories, and other data. To prevent other users in the domain from accessing the user's data, SageMaker creates a globally unique user ID for the user's profile and applies it as a POSIX user/group ID for the users home directory.
   * By default, when you create a notebook instance, users that log into that notebook instance have root access. If you don't want users to have root access to a notebook instance, when you call CreateNotebookInstance or UpdateNotebookInstance operations, set the RootAccess field to Disabled.
 	* To protect your Amazon SageMaker Studio notebooks and SageMaker notebook instances, along with your model-building data and model artifacts, SageMaker encrypts the notebooks, as well as output from Training and Batch Transform jobs. SageMaker encrypts these by default using the AWS Managed Key for Amazon S3. For cross-account access use AWS KMS.
 	* In Amazon SageMaker Studio, your SageMaker Studio notebooks and data can be stored in the following locations: S3, EBS, EFS
@@ -194,5 +195,54 @@ __Deploy & Manage__ - Pipelines, Model Monitor, Kubernetes Integration, Edge Man
 * __AWS CloudTrail__ captures API calls and related events made by or on behalf of your AWS account and delivers the log files to an Amazon S3 bucket that you specify. You can identify which users and accounts called AWS, the source IP address from which the calls were made, and when the calls occurred.
 
 * __Amazon EventBridge__ monitors status change events in Amazon SageMaker. EventBridge enables you to automate SageMaker and respond automatically to events such as a training job status change or endpoint status change. Events from SageMaker are delivered to EventBridge in near real time. You can write simple rules to indicate which events are of interest to you, and what automated actions to take when an event matches a rule.
+
+### Additional
+
+* __Softmax__ is a mathematical function used in multinomial logistic regression and used as an activation function in neural network model to nomalize the output. eg., argmax[1,3,2] => [0,1,0] and softmax[1,3,2]= [0.09003057317038046 0.6652409557748219 0.24472847105479767] where sum of output = 1
+
+* __Transfer learning__ is a research problem in machine learning that focuses on storing knowledge gained while solving one problem and applying it to a different but related problem.
+
+* __Vanishing gradients__ problem is one example of unstable behavior that you may encounter when training a deep neural network. It describes the situation where a deep multilayer feed-forward network or a recurrent neural network is unable to propagate useful gradient information from the output end of the model back to the layers near the input end of the model.
+
+* __Elbow Method (K-Means)__ A fundamental step for any unsupervised algorithm is to determine the optimal number of clusters into which the data may be clustered. The Elbow Method is one of the most popular methods to determine this optimal value of k. 
+
+* __Collaborative Filtering_ is a technique used by recommender systems. Collaborative filtering is a technique that can filter out items that a user might like on the basis of reactions by similar users.
+
+* __Q-learning__ is a model-free reinforcement learning algorithm to learn the value of an action in a particular state. It does not require a model of the environment, and it can handle problems with stochastic transitions and rewards without requiring adaptations.
+
+* __Deep Neural Network (DNN)__ are typically Feed Forward Networks (FFNNs) in which data flows from the input layer to the output layer without going backward and touching the node again. (input layer > hidden layer > output layer)
+
+* __Recurrent Neural Network (RNN)__ is a FFNN with a time twist, stateful(use internal state memory), exhibit similar like a human brain function. eg., language translation, speech recognition. RNN has vanishing gradient problem.
+
+* __Long Short Term Memory (LSTM)__ is a special kind of RNN smart in remembering things and does not having vanishing gradient problem. 
+
+* __Convolutional Neural Network (CNN)__ is a type of DNN mostly applied to analyzing visual image, video understanding.
+
+* __AWS Deep Composer__ is an artificial intelligence (AI)-enabled music keyboard
+
+* __AWS Deep Lens__ pairs a connected HD camera developer kit with a set of sample projects to help developers learn machine learning concepts using hands-on computer vision use cases.
+
+* __AWS DeepRacer__ is a reinforcement learning (RL)-enabled autonomous 1/18th-scale vehicle
+
+* __Apache Parquet__ is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. It is similar to the other columnar-storage file formats available in Hadoop namely RCFile and ORC.
+
+ContentType - Algorithm
+application/x-recordio - Object Detection Algorithm
+application/x-recordio-protobuf	- Factorization Machines, K-Means, k-NN, Latent Dirichlet Allocation, Linear Learner, NTM, PCA, RCF, Sequence-to-Sequence
+application/jsonlines - BlazingText, DeepAR
+image/jpeg/png, application/x-image - Object Detection Algorithm, Semantic Segmentation
+text/csv - IP Insights, K-Means, k-NN, Latent Dirichlet Allocation, Linear Learner, NTM, PCA, RCF, XGBoost
+text/libsvm - XGBoost
+
+* __CSV Format__ SageMaker requires that a CSV file does not have a header record and that the target variable is in the first column.
+To run unsupervised learning algorithms that don't have a target, specify the number of label columns in the content type. eg ., 'content_type=text/csv;label_size=0' 
+
+* __protobuf recordIO__ format, SageMaker converts each observation in the dataset into a binary representation as a set of 4-byte floats, then loads it in the protobuf values field
+
+* Amazon SageMaker algorithm __inference requests__ include: text/csv, application/json, and application/x-recordio-protobuf. Algorithms that don't support all of these types can support other types. XGBoost, for example, only supports text/csv from this list, but also supports text/libsvm.
+
+* __Data augmentation__ in data analysis are techniques used to increase the amount of data by adding slightly modified copies of already existing data or newly created synthetic data from existing data
+
+* __Amazon Augmented AI__ to get human review of low-confidence predictions or random prediction samples.
 
 * __Amazon SageMaker__ provides APIs, SDKs, and a command line interface that you can use to create and manage notebook instances and train and deploy models.
