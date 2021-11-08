@@ -226,13 +226,13 @@ __Deploy & Manage__ - Pipelines, Model Monitor, Kubernetes Integration, Edge Man
 
 * __Apache Parquet__ is a free and open-source column-oriented data storage format of the Apache Hadoop ecosystem. It is similar to the other columnar-storage file formats available in Hadoop namely RCFile and ORC.
 
-ContentType - Algorithm
-application/x-recordio - Object Detection Algorithm
-application/x-recordio-protobuf	- Factorization Machines, K-Means, k-NN, Latent Dirichlet Allocation, Linear Learner, NTM, PCA, RCF, Sequence-to-Sequence
-application/jsonlines - BlazingText, DeepAR
-image/jpeg/png, application/x-image - Object Detection Algorithm, Semantic Segmentation
-text/csv - IP Insights, K-Means, k-NN, Latent Dirichlet Allocation, Linear Learner, NTM, PCA, RCF, XGBoost
-text/libsvm - XGBoost
+* __ContentType - Algorithm__
+  * application/x-recordio - Object Detection Algorithm
+  * application/x-recordio-protobuf	- Factorization Machines, K-Means, k-NN, Latent Dirichlet Allocation, Linear Learner, NTM, PCA, RCF, Sequence-to-Sequence
+  * application/jsonlines - BlazingText, DeepAR
+  * image/jpeg/png, application/x-image - Object Detection Algorithm, Semantic Segmentation
+  * text/csv - IP Insights, K-Means, k-NN, Latent Dirichlet Allocation, Linear Learner, NTM, PCA, RCF, XGBoost
+  * text/libsvm - XGBoost
 
 * __CSV Format__ SageMaker requires that a CSV file does not have a header record and that the target variable is in the first column.
 To run unsupervised learning algorithms that don't have a target, specify the number of label columns in the content type. eg ., 'content_type=text/csv;label_size=0' 
