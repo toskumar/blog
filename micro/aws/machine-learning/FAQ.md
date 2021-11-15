@@ -64,13 +64,13 @@
 
   |Actual/Predicted | Predicted True | Predicted False | |
   | --- | --- | --- | --- | 
-  | __Actual True__ | I predicted correctly! (True Positive)     | I was wrong. (False Negative) (Incorrectly predicted a negative case) (Type II error) miss, under-estimating | Recall/Sensitivity/TPR = TP/(TP+FN) |
+  | __Actual True__ | I predicted correctly! (True Positive)     | I was wrong. (False Negative) (Incorrectly predicted as negative case) (Type II error) miss, under-estimating | Recall/Sensitivity/TPR = TP/(TP+FN) |
   | __Actual False__ | I was wrong (False Positive) (Incorrectly predicted as positive case) (Type I error) false alarm, over-estimating | I predicted Correctly! (True Negative)| Specificity/TNR=TN/(TN+FP) or FPR=FP/(FP/TN)|
   | | Precision = TP/(TP+FP) | - | Accuracy = (TP + TN)/(TP+FP+FN+TN) |
   * __Accuracy__ measures the percentage of correct predictions. Accuracy = (TP + TN)/(TP+FP+FN+TN)
   * __Precision__ Precision shows the percentage of actual positive instance. Precision = TP/(TP+FP)
   * __Recall/Sensitivity/TPR__ Recall shows the percentage of actual positives among the total number of relevant instances. Recall = TP/(TP+FN)
-  * __Specificity/TNR__ TN/(TN+FP)
+  * __Specificity/TNR__ : TN/(TN+FP)
   * __False Positive Rate__ measures the false alarm rate or the fraction of actual negatives that are predicted as positive. FPR = FP/(FP+TN) 
 
 ## ML Framework
@@ -115,6 +115,7 @@
 ### Data transformation
 * __N-gram Transformation__ ngram(var1, 2) = {"I really enjoined"} = {"I really", "really enjoined", "I", "really", "enjoined"} 
 * __Orthogonal Sparse Bigram (OSB) Transformation__ osb(var1, 3) = {"I really enjoined"} = {"I_really", "I__enjoined", "really_enjoined"}
+* __Term Frequency-Inverse Document Frequency (TF-IDF)__ is a popular approach used to weigh terms for NLP tasks. eg., {"I am walking"} {"I am reading"} = { "I am", "am walking", "am reading", "I", "am", "walking", "reading"} = {2,7}
 * __Lowercase Transformation__ lowercase(var1) = {"I Really Enjoined"} = {"i really enjoined"}	
 * __Remove Punctuation Transformation__ no_punct(var1) = {"please - fasten your seat-belts!"} = {"please", "fasten", "your", "seat-belts"}
 * __Quantile Binning Transformation__ The purpose is to discover non-linearity in the variable's distribution by grouping observed values together
@@ -130,11 +131,10 @@
 * Amazon SageMaker is a fully managed machine learning service. With SageMaker, data scientists and developers can quickly and easily build and train machine learning models, and then directly deploy them into a production-ready hosted environment.
 
 * __SageMaker Model building steps__
-__Prepare__ - Data Wrangler, Feature Store, Ground Truth, Clarify
-__Build__ - Studio, AutoPilot, JumpStart
-__Train & Tune__ - Experiment, Debugger, Distributed Training
-__Deploy & Manage__ - Pipelines, Model Monitor, Kubernetes Integration, Edge Manager, Neo
- 
+  * __Prepare__ - Data Wrangler, Feature Store, Ground Truth, Clarify
+  * __Build__ - Studio, AutoPilot, JumpStart
+  * __Train & Tune__ - Experiment, Debugger, Distributed Training
+  * __Deploy & Manage__ - Pipelines, Model Monitor, Kubernetes Integration, Edge Manager, Neo
 
 * __SageMaker Features__
   * __SageMaker Studio__ - An integrated machine learning environment where you can build, train, deploy, and analyze your models all in the same application.
@@ -206,7 +206,7 @@ __Deploy & Manage__ - Pipelines, Model Monitor, Kubernetes Integration, Edge Man
 
 * __Elbow Method (K-Means)__ A fundamental step for any unsupervised algorithm is to determine the optimal number of clusters into which the data may be clustered. The Elbow Method is one of the most popular methods to determine this optimal value of k. 
 
-* __Collaborative Filtering_ is a technique used by recommender systems. Collaborative filtering is a technique that can filter out items that a user might like on the basis of reactions by similar users.
+* __Collaborative Filtering__ is a technique used by recommender systems. Collaborative filtering is a technique that can filter out items that a user might like on the basis of reactions by similar users.
 
 * __Q-learning__ is a model-free reinforcement learning algorithm to learn the value of an action in a particular state. It does not require a model of the environment, and it can handle problems with stochastic transitions and rewards without requiring adaptations.
 
