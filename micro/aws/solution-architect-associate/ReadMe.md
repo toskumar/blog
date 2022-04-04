@@ -58,12 +58,6 @@ Objects can be stored cost effectively though the life cycle management. It is a
 * S3 select enables applications to retrieve only a subset of data from an object (csv,json,zip containing csv) by using simple SQL expression.
 * Glacier select allows you to run SQL queries against Glacier directly.
 
-### AWS Organization
-AWS Organization is an account management service that enables you to consolidate multiple AWS accounts into an organization that you create and centrally manage.
-* Paying account should be used for billing purpose only, other Org units accounts can be linked to this paying account for consolidated billing.
-* Service Control Policies - Either OrgUnit or individual accounts services can be enabled or disabled
-* Tag Policies are a type of policy that can help you standardize tags across resources in your organization's accounts.
-
 ### Cross Account Access
 * Using Bucket policies & IAM (applies across the entire bucket) - Programmatic access only
 * Using Bucket ACL and IAM (individual objects). Programmatic access only
@@ -76,3 +70,50 @@ AWS Organization is an account management service that enables you to consolidat
 * Delete markers are not replicated
 * Deleting individual version or delete markers will not be replicated.
 * Make public action does not get replicated to target bucket.
+
+### Transfer Acceleration
+S3 transfer acceleration utilises the CloudFront edge network to accelerate your uploads to S3. Instead of uploading directly to your s3 bucket, you can use a distinct URL to upload directly to an edge location which will then transfer that file to S3. 
+
+## AWS Organization
+AWS Organization is an account management service that enables you to consolidate multiple AWS accounts into an organization that you create and centrally manage.
+* Paying account should be used for billing purpose only, other Org units accounts can be linked to this paying account for consolidated billing.
+* Service Control Policies - Either OrgUnit or individual accounts services can be enabled or disabled
+* Tag Policies are a type of policy that can help you standardize tags across resources in your organization's accounts.
+
+## Datasync
+* Used to move large amounts of data from on-premises to AWS
+* Used with NFS and SMB compatible file system
+* Replication can be done hourly, daily or weekly
+* Install the DataSync agent to start the replication
+* Can be used to replicate EFS to EFS
+* OnPrem Shared FS <-> AWS DataSync Agent <-> Network Transfers <-> AWS DataSync <-> S3, EFS, FSx 
+
+## Cloud Front
+A content delivery network (CDN) is a system of distributed servers that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
+* Edge location is a location where content will be cache, supports both read and write.
+* Origin is the actual location of files that CDN will distribute. This can be an S3, EC2, ELB or RouteR3.
+* Distribution is the name given the CDN which consists of a collection of edge location.
+* Used to deliver static and dynatic website, streaming and interactive content.
+* Request are routed to nearest edge location.
+* Web distribution and Real-Time Messaging Protocol (RTMP) media streaming
+* Objects are cached for the life of the TTL (time to live)
+* You can invalidate cached objects but you will be charged
+
+### Signed URL or Cookie
+* Use signed url/cookie when you want to secure content for authorized users.
+* Use CloudFront signed URL for individual files 1 file = 1 url
+* Use CloudFront signed Cookie for multiple files 1 cookie = multiple files
+* Create signed url/cookie and attach policy which includes url expiration, ip ranges and trusted signers
+* Create S3 signed url
+  * Issues a request as the IAM user who creates the presigned URL
+  * Limited lifetime
+* When the origin is EC2 then use CloudFront 
+* When the origin is S3 then use S3 presigned URL for single file access.
+
+## Snowball
+### Snowball Edge
+Snowball edge is a 100 TB data transfer device with onboard storage and compute capabilities. Transfers large amount of data into and out of AWS, supports local workloads in remote or offline locations. Snowball can import and export from S3
+
+### Snowmobile 
+Snowmobile is an exabyte-scale data transfer service used to move extremely large amounts of data to AWS. You can transfer upto 100PB per snowmobile, a 45 foot long shipping container. Migrate massive volumes of data to cloud, including video libraries, image repositories, or even a complete data center.
+
