@@ -96,6 +96,13 @@ S3 transfer acceleration utilises the CloudFront edge network to accelerate your
 * Can be used to replicate EFS to EFS
 * OnPrem Shared FS <-> AWS DataSync Agent <-> Network Transfers <-> AWS DataSync <-> S3, EFS, FSx 
 
+#### EFS - FSx 
+* EFS - When you need distributed, highly resilient storage for Linux instances and Linux-based applications
+
+* Amazon FSx for windows - When you need centralized storage for Windows based applications such as Share point, Microsoft SQL Server, Workspaces, IIS Web Server or any other native Microsoft Application.
+
+* Amazon FSx for Lustre - When you need high speed, high capacity distributed storage. This will be for applications that do High Performance Compute(HPC), financial modelling etc. Remember that FSx for Lustre can store data directly on S3
+
 ### Cloud Front
 A content delivery network (CDN) is a system of distributed servers that deliver webpages and other web content to a user based on the geographic locations of the user, the origin of the webpage, and a content delivery server.
 * Edge location is a location where content will be cache, supports both read and write.
@@ -129,6 +136,15 @@ Storage Gateway is a service that connects an on-premises software appliance wit
   * Stored Volumes - let you store your primary data locally and provides low-latency access to their entire dataset. (eg., think about windows C: drive which contains all OS data)
   * Cached Volumes - let you store only frequently accessed data locally in your storage gateway. (eg., think about windows D: drive which contains user files)
 * Tape Gateway (Virtual Tape Library) offers a durable, cost effective solution to archive your data in the AWS Cloud.
+
+### Elastic File System (EFS)
+EFS is a file storage service for EC2 instances. EFS is easy to use and provides a simple interface that allows you to create and configure file systems quickly and easily.
+
+```sh
+$ yum install -y amazon-efs-utils
+
+$ mount -t efs -o tls <fs-name>:/ <local-mount-path>
+```
 
 ## Analytics
 ### Athena
@@ -236,6 +252,13 @@ All AMI are categorized as either backed by Amazon EBS or backed by instance sto
 * Elastic Fabric Adapter - A network device that you can attach to your EC2 instance to accelerate High Performance Computing (HPC) and machine learning applications.
   * When you need to accelerate High Performance Computing (HPC) and machine learning applications or if you need to do an OS by-pass. If you see a scenario question mentioning HPC or ML then choose EFA
 
+### Placement Groups
+* Cluster placement group is a grouping of instances within a single Availability Zone. Placement groups are recommended for applications that need low network latency, high network throughput or both.
+
+* Spread placement group is a group of instance that are each placed on distinct underlying hardware. Recommended for applications that have a small number of critical instances that should be kept separate from each other.
+
+* Partition placement groups divides each group into logical segments called partitions. EC2 ensures that each partition within a placement group has its own set of racks. Each rack has its own network and power source. No two partitions within a placement group share the same racks, allowing you to isolate the impact of hardware failure within your application.
+
 ## Monitoring
 ### Cloud Watch
 * Cloud Watch is used for monitoring performance
@@ -290,5 +313,25 @@ service httpd start
 chkconfig httpd on
 cd /var/www/html
 echo "<html><h1>Hello AWS Cloud, Welcome to my web page</h1></html>" > index.html
+```
+
+### Instance Metadata
+Used to get information about an instance such as public ip address
+
+```sh
+# login as ec2-user
+$ ssh ec2-user@<IP ADDERSS> -i <public_key>
+
+# change to super user
+$ sudo su
+
+# display the user bootstrap command
+$ curl http://<ip.address>/latest/user-data
+
+# list of sub commands for meta-data
+$ curl http://<ip.address>/latest/meta-data
+
+# meta-data command to get public-ipv4 of the ec2 instance
+$ curl http://<ip.address>/latest/meta-data/public-ipv4
 ```
  
