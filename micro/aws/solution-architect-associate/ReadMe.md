@@ -124,6 +124,7 @@ Storage Gateway is a service that connects an on-premises software appliance wit
   * Cached Volumes - let you store only frequently accessed data locally in your storage gateway. (eg., think about windows D: drive which contains user files)
 * Tape Gateway (Virtual Tape Library) offers a durable, cost effective solution to archive your data in the AWS Cloud.
 
+## Analytics
 ### Athena
 Athena is an interactive query service which enables you to analyse and query data located in S3 using standard SQL.
 * Servers, pay per query per TB scanned
@@ -133,3 +134,141 @@ Athena is an interactive query service which enables you to analyse and query da
 ### Macie
 PII (Personally Identifiable Information) eg., name, age, dob, credit card number etc.,
 Macie is a security service which uses Machine Learning and NLP to discover, classify and protect sensitive data(PII) stored in S3. Analyse cloud trail logs for suspicious api activity. Includes Dashboards, reports and alerting. Great for PCI-DSS compliance and preventing ID theft.
+
+## Compute
+### EC2 Elastic Compute Cloud
+EC2 is a web service that provides resizable compute capacity in the cloud. EC2 reduce time required to boot the new server instances in minutes, scale both up and down as the computing requirements change.
+* On Demand - instance allows you to pay a fixed rate by the hour or second with no commitments.
+* Reserved - instance provides you with a capacity reservation and offers a significant discount on the hourly charge. Contract terms are 1 to 3 years.
+  * Standard reserved instance offers upto 75% off on demand instances. The more you pay up front and the longer the contract, the greater the discount.
+  * Convertible reserved instance offers upto 54% on demand, capability to exchange RI of equal or greater value.
+  * Scheduled reserved instance is available to launch within the time windows you reserve. This options allows you to match your capacity reservation to a predictable recurring schedule that only requires a fraction of a day, a week or a month.  
+* Spot - instance enables you to bid whatever price you want for instance capacity  with flexible start and end times. 
+  * Spot block can be used to stop your spot instances from being terminated even if the spot price goes over your max spot price. You can set spot blocks for between one to six hours currently.
+* Dedicated Hosts - physical EC2 server dedicated to use your existing server bound software licenses.
+
+### EC2 Instance Types
+* F - FPGA
+* I - IOPS
+* G - Graphics
+* H - High disk throughput
+* T - Cheap general purpose 
+* D - Density
+* R - RAM
+* M - Main choice for general pupose apps
+* C - Compute
+* P - Graphics (think Pics)
+* X - Extreme memory
+* Z - Extreme memory and CPU
+* A - Arm based workloads
+* U - Bare metal
+
+### EC2 FAQ
+* Termination Protection is turned off by default, you must turn it on.
+* On an EBS backed instance, the default action is for the root EBS volume to be deleted when the instance is terminated.
+* EBS Root volumes of your default AMI's CAN be encrypted. You can also use a third party tool (such as bit locker) to encrypt the root volume, or this can be done when creating AMI's in the AWS console or using the API.
+* Additional volumes can be encrypted
+
+### Security Groups
+* All inbound traffic is blocked by default
+* All outbound traffic is allowed
+* Changes to security groups take effect immediately
+* You can have any number of EC2 instances within a security group
+* You can have multiple security groups attached to EC2 instances
+* Security groups are Stateful. when you create an inbound rule allowing traffic in, that traffic is automatically allowed back out again.
+* You cannot block specific IP addresses using Security Groups, instead use Network Access Control Lists.
+* You can specify allow rules but not deny rules
+
+### Elastic Block Store (EBS)
+EBS provides persistent block storage volumes for use with EC2 instances. Each EBS volume is automatically replicated within its availability zone to protect you from component failure, offering high availability and durability.
+* Types of EBS Storage
+  * General purpose (SSD) - Most work loads
+  * Provisioned IOPS (SSD) - Database
+  * Throughput optimised hard disk drive - Big data and data warehouses 
+  * Cold hard disk drive - File servers
+  * Magnetic - Workloads where data is infrequently accessed
+
+### EBS Snapshots
+* Volumes exists on EBS and think EBS as a virtual hard disk
+* Snapshots exits on S3 and think of snapshots as a photograph of the disk
+* Snapshots are point in time copies of volumnes
+* Snapshots are incremental - this means that only the blocks that have changed since your last snapshot are moved to S3
+* To create a snapshot for EBS volumes that serve as root devices, you should stop the instance before taking the snapshot. However you can take a snap while the instance is running.
+* You can create AMI from snapshots
+* You can change EBS volume sizes on the fly, including changing the size and storage type.
+* Volumes will always be in the same availability zone as the EC2 instance.
+* To move an EC2 volume you can one AZ to another, take a snapshot of it, create an AMI from the snapshot and then use the AMI to launch the EC2 instance in a new AZ
+* To move an EC2 volume from one region to another, take a snapshot of it, create an AMI from the snapshot and then copy the AMI from one region to the other. Then use the copied AMI to launch the new EC2 instance in the new region.
+
+### Encrypted root device volumes & snapshots
+* Snapshots of encrypted volumes are encrypted automatically
+* Volumes restored from encrypted snapshots are encrypted automatically
+* You can share snapshots only if they are unencrypted
+* Unencrypted snapshots can be shared with other AWS accounts or made public
+* You can now encrypt root device volumes upon creation of the EC2 instance
+Steps to convert an unencrypted volume to encrypted volume
+* Create a snapshot of the unencrypted root device volume
+* Create a copy of the snapshot and select the encrypt option
+* Create an AMI from the encrypted snapshot
+* Use that AMI to launch new encrypted instances 
+
+### AMI Types
+All AMI are categorized as either backed by Amazon EBS or backed by instance store.
+* EBS Volumes - The root device for an instance launched from the AMI is an amazon EBS volume created from an EBS snapshot.
+* Instance store volumes - The root device for an instance launched from the AMI is an instance store volume created from a template stored in S3.
+  * Instance store volumes are sometimes called ephemeral storage
+  * Instance store volumes cannot be stopped. If the underlying host fails, you will lose your data
+  * EBS backed instances can be stopped. you will not lose the data on this instance if it is stopped.
+  * You can reboot both, you will not lose your data
+  * By default both root volumes will be deleted on termination. However with EBS volumes you can tell AWS to keep the root device volume.
+
+### ENI vs EN vs EFA
+* ENI - Elastic network interface - essentially a virtual network card. 
+  * For basic networking. Perhaps you need a separate management network to you production network or a separate logging network and you need to do this at low cost. In this scenario use multiple ENIs for each network.
+* EN - Enhanced networking. uses single root IO virtualization (SR-IOV) to provide high-performance networking capabilities on supported instance types.
+  * When you need speeds between 10Gbps and 1000Gbps. Anywhere you need reliable, high throughput.
+* Elastic Fabric Adapter - A network device that you can attach to your EC2 instance to accelerate High Performance Computing (HPC) and machine learning applications.
+  * When you need to accelerate High Performance Computing (HPC) and machine learning applications or if you need to do an OS by-pass. If you see a scenario question mentioning HPC or ML then choose EFA
+
+## Monitoring
+### Cloud Watch
+* Cloud Watch is used for monitoring performance
+* Cloud Watch can monitor most of AWS as well as your applications that run on AWS
+* Cloud Watch with EC2 will monitor events every 5 minutes by default
+* You can have 1 minute intervals by turning on detailed monitoring
+* You can create CloudWatch alarms which trigger notifications
+
+### AWS CommandLine
+Download EC2 key pair to connect EC2 instance and launch ssh console
+
+```
+# login as ec2-user
+$ ssh ec2-user@<IP ADDERSS> -i <public_key>
+
+# change to super user
+$ sudo su
+
+# configure aws by providing access key, secret and default region, 
+# This command saves the credentials in the userhome/.aws directory. For security reason this is not advisable to connect EC2 using command line credentials.
+$ aws configure
+
+# list all s3 bucket names
+$ aws s3 ls
+```
+
+Now create an administrator role for EC2 service and attach the role to the EC2 instance.
+
+```
+# login as ec2-user
+$ ssh ec2-user@<IP ADDERSS> -i <public_key>
+
+# change to super user
+$ sudo su
+
+# change to home directory and delete .aws directory
+$ cd ~ | rm -rf .aws
+
+# list all s3 bucket names
+$ aws s3 ls
+```
+ 
