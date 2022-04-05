@@ -1,6 +1,12 @@
 # AWS Solution Architect Associate
 
 ## IAM
+### IAM Roles
+* Roles are more secure than storing your access key and secret access key on individual EC2 instances
+* Roles are easier to manage
+* Roles can be assigned to an EC2 instance after it is created using both the console and command line.
+* Roles are universal, you can use them in any region
+
 ### AWS Organization
 AWS Organization is an account management service that enables you to consolidate multiple AWS accounts into an organization that you create and centrally manage.
 * Paying account should be used for billing purpose only, other Org units accounts can be linked to this paying account for consolidated billing.
@@ -238,7 +244,8 @@ All AMI are categorized as either backed by Amazon EBS or backed by instance sto
 * You can have 1 minute intervals by turning on detailed monitoring
 * You can create CloudWatch alarms which trigger notifications
 
-### AWS CommandLine
+## Utility
+### Command Line
 Download EC2 key pair to connect EC2 instance and launch ssh console
 
 ```
@@ -249,7 +256,8 @@ $ ssh ec2-user@<IP ADDERSS> -i <public_key>
 $ sudo su
 
 # configure aws by providing access key, secret and default region, 
-# This command saves the credentials in the userhome/.aws directory. For security reason this is not advisable to connect EC2 using command line credentials.
+# This command saves the credentials in the userhome/.aws directory.
+# For security reason this is not advisable to connect EC2 using command line credentials.
 $ aws configure
 
 # list all s3 bucket names
@@ -270,5 +278,17 @@ $ cd ~ | rm -rf .aws
 
 # list all s3 bucket names
 $ aws s3 ls
+```
+
+### Boot script
+
+```cmd
+#!/bin/bash
+yum update -y
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+cd /var/www/html
+echo "<html><h1>Hello AWS Cloud, Welcome to my web page</h1></html>" > index.html
 ```
  
