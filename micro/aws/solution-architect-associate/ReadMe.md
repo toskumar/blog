@@ -248,7 +248,7 @@ All AMI are categorized as either backed by Amazon EBS or backed by instance sto
 ### Command Line
 Download EC2 key pair to connect EC2 instance and launch ssh console
 
-```
+```sh
 # login as ec2-user
 $ ssh ec2-user@<IP ADDERSS> -i <public_key>
 
@@ -266,7 +266,7 @@ $ aws s3 ls
 
 Now create an administrator role for EC2 service and attach the role to the EC2 instance.
 
-```
+```sh
 # login as ec2-user
 $ ssh ec2-user@<IP ADDERSS> -i <public_key>
 
@@ -282,7 +282,7 @@ $ aws s3 ls
 
 ### Boot script
 
-```cmd
+```sh
 #!/bin/bash
 yum update -y
 yum install httpd -y
