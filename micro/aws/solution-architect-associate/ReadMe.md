@@ -267,6 +267,23 @@ All AMI are categorized as either backed by Amazon EBS or backed by instance sto
 * You can have 1 minute intervals by turning on detailed monitoring
 * You can create CloudWatch alarms which trigger notifications
 
+## Security
+### Web Application Firewall (WAF)
+WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon CloudFront an Application Load Balancer or API Gateway
+
+You can configure conditions such as what IP addresses are allowed to make this request or what query string parameters need to be passed for that request to be allowed. Then the application load balancer or CloudFront or API Gateway will either allow this content to be received or to give a HTTP 403 Status Code.
+Behaviors and Protection 
+* Allow all requests except the ones you specify
+* Block all requests except the ones you specify
+* Count the requests that match the properties you specify
+* IP addresses that requests originates
+* Country that requests orginate
+* Values in request headers
+* Strings that appears in requests, either specific strings or string that match regular expression (regex) patterns
+* Length of requests
+* Presence of SQL code that is likely to be malicious (known as SQL injection)
+* Presence of a script that is likely to be malicious (known as cross-site scripting)
+
 ## Utility
 ### Command Line
 Download EC2 key pair to connect EC2 instance and launch ssh console
@@ -334,4 +351,67 @@ $ curl http://<ip.address>/latest/meta-data
 # meta-data command to get public-ipv4 of the ec2 instance
 $ curl http://<ip.address>/latest/meta-data/public-ipv4
 ```
+
+## AWS Database
+### Relational Database Service (RDS)
+* SQL Server
+* Oracle
+* MySQL Server
+* PostgreSQL
+* Aurora
+* MariaDB
+RDS has two key feature
+* Multi AZ for disaster recovery
+* Read Replicas for performance
+
+Remember the followings points
+* RDS run on virtual machines and its a managed service so we can't login in and patch operating system
+* RDS is NOT Serverless however Aurora is Serverless
+* RDS has two different types of Backups and Automated Backups and Database Snapshots
+Read Relicas
+* Can be Multi-AZ
+* Used to increase performance
+* Must have backups turned on
+* Can be in different regions
+* Can be Aurora, MySQL, PostgreSQL, MariaDB, Oracle and SQL Server
+* Can be promoted to master, this will break the read replica
+Multi-AZ
+* Used for DR
+* You can force failover from one AZ to another by rebooting the RDS instance.
+Encryption - at reset is supported by SQL Server, Oracle, MySQL, PostgreSQL, MariaDB and Aurora. Encryption is done using the AWS Key Management Service (KMS). Once your RDS instance is encrypted, the data stored at rest in the underlying storage is encrypted, as are its automated backups, read replicas and snapshots.
+
+Aurora
+* 2 copies of your data are contained in each AZ, with minimum of 3 availability zones. 6 copies of your data.
+* Can share Aurora snapshots with other AWS Accounts
+* 3 types of replicas available. Aurora replicas, MySQL replicas & PostgreSQL replicas. Automated failover is only available with Aurora replicas.
+* Aurora has automated backups turned on by default. You can also take snapshots with Aurora, You can share these snapshots with other AWS accounts.
+* Use Aurora Serverless if you want a simple, cost-effective option for infrequent, intermittent or unpredictable workloads
+
+### Non Relational Databases 
+DynamoDB (No SQL)
+* Stored on SSD storage
+* Spread across 3 geographically distinct data centers
+* By default supports eventual consistent reads 
+* Strongly consistent reads
+Comparison 
+* Collection - Table
+* Document - Row
+* key value - Column
+
+OnLine Transaction Processing OLTP  - RDS
+OnLine Analytical Processing OLAP - RedShift
+
+RedShift - Data Warehousing databases use different type of architecture both from a database perspective and infrastructure layer. 
+Backups
+* Enabled by default with a 1 day retention period
+* Maximum retention period is 35 days
+* Redshift always attempts to maintain at least three copies of your data (the original and replica on the compute nodes and a backup in Amazon S3)
+* Redshift can also asynchronously replicate your snapshots to S3 in another region for disaster recovery.
  
+
+Elastic Cache
+Elastic Cache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in cloud. Increase database and web application performance.
+* MemCached - Simple to use and scales horizontally.
+* Redis - Supports Multi-AZ, backup, restores and scales horizontally. 
+
+
