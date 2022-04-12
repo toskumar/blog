@@ -7,11 +7,116 @@
 * Roles can be assigned to an EC2 instance after it is created using both the console and command line.
 * Roles are universal, you can use them in any region
 
+### IAM Policies
+
+Amazon Resource Name (ARN)
+ARN all begin with - arn:parition:service:region:account_id:
+eg., arn:aws:s3:us-east-1:123456789
+and ends with 
+resource, resource_type/resource, resource_type/resource:qualifier
+
+Policy
+* JSON document that deines permissions
+* Identity policy
+* Resource policy
+* No effect until attached
+* List of statements
+
+```json
+{
+  "Version": "2012-10-10",
+	"Statement": [
+	  {
+		  "Sid": "SpecificTable",
+			"Effect": "Allow",
+			"Action": [
+				"dynamodb:BatchGet*",
+				"dynamodb:Get*",
+				"dynamodb:Query",
+				"dynamodb:Scan"
+			],
+			"Resource": "arn:aws:dynamodb:*:*:table/MyTable"
+		}
+	]
+}
+```
+Exam Tips
+* Not explicitly allowed == implicityly denied
+* Explicit deny > everthing else
+* Only attached policies have effect
+* AWS joins all applicable policies
+* AWS managed VS customer managed
+
+### Permission Boundaries
+* Used to delegate administration to other users
+* Prevent priviledge escalation or unnecessarily broad permission
+* Control maximum permission an IAM  policy can grant
+* Use cases:
+  * Developers creating roles for Lambda functions
+	* Application owners creating roles for EC2 instances
+	* Admins creating adhoc users
+	
+### AWS Resource Access Manager (RAM)
+Resource Access Manager allows __resource sharing__ between accounts
+
+### AWS Single Sign-On
+SSO service helps centrally manage access to AWS accounts and business applications. SAML 2.0 enabled application can use SSO to login.
+
 ### AWS Organization
 AWS Organization is an account management service that enables you to consolidate multiple AWS accounts into an organization that you create and centrally manage.
 * Paying account should be used for billing purpose only, other Org units accounts can be linked to this paying account for consolidated billing.
 * Service Control Policies - Either OrgUnit or individual accounts services can be enabled or disabled
 * Tag Policies are a type of policy that can help you standardize tags across resources in your organization's accounts.
+
+## AWS Directory Service
+* Family of managed services
+* Connect AWS resources with on-premises AD
+* Standalone directory in the cloud
+* Use existing corporate credentials
+* SSO to any domain-joined EC2 instance
+
+### Active Directory
+* On-premises directory services
+* Hierarchical database of users, groups, computers - trees and forests
+* Group policies
+* LDAP and DNS
+* Kerberos, LDAP and NTML authentication
+* Highly available
+
+### Managed Microsoft AD
+* AD domain controller (DC) running Windows Server
+* Reachable by applications in your VPC
+* Add DCs for HA and performance
+* Exclusive access to DC's
+* Extend existing AD to on-premises using AD Trust
+
+### Simple AD
+* Standalone managed directory
+* Basic AD features
+* Small <=500 and Large <=5000 users
+* Easier to manage EC2
+* Linux workloads that need LDAP
+* Does not support trusts (can't join on-premises AD)
+
+### AD Connector
+* Directory gateway (proxy) for on-premises AD
+* Avoid caching information in the cloud
+* Allow on-premises users to log in to AWS using AD
+* Join EC2 instances to your existing AD domain
+* Scale across multiple AD connectors
+
+### Cloud Directory
+* Directory-based store for developers
+* Multiple hierarchies with hundreds of million of objects
+* Use cases: org charts, course catalogs, device registries
+* Fully managed service
+
+### Cognito User Pools
+* Managed user directory for SaaS applications
+* Sign-up and sign-in for web or mobile
+* Works with social media identities
+ 
+
 
 ## Storage 
 ### S3 - Simple Storage Service
@@ -408,10 +513,8 @@ Backups
 * Redshift always attempts to maintain at least three copies of your data (the original and replica on the compute nodes and a backup in Amazon S3)
 * Redshift can also asynchronously replicate your snapshots to S3 in another region for disaster recovery.
  
-
 Elastic Cache
 Elastic Cache is a web service that makes it easy to deploy, operate, and scale an in-memory cache in cloud. Increase database and web application performance.
 * MemCached - Simple to use and scales horizontally.
 * Redis - Supports Multi-AZ, backup, restores and scales horizontally. 
-
 
