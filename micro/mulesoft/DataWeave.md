@@ -215,7 +215,7 @@ ns ns0 http://example.com/hello/
 %dw 2.0
 output application/json
 
-fun split(name) = name splitBy (',') map trim($) 
+fun split(name: String) = name splitBy (',') map trim($) 
 ---
 do {
     var arr = split(payload.name)
