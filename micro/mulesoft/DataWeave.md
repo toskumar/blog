@@ -184,3 +184,22 @@ var p = {
 ---
 [traverse(p, (e) -> lower(e)), traverse(p, (e) -> upper(e))]
 ```
+
+### Dataweave script to create soap xml for webservice
+```javascript
+%dw 2.0
+output application/xml
+ns soap http://schemas.xmlsoap.org/soap/envelope/
+ns ns0 http://example.com/hello/
+---
+{
+    soap#envelope: {
+         soap#body: {
+             ns0#hello: {
+                 ns0#arg0: 'Prasanth'
+             }
+         }
+    }
+}
+
+```
