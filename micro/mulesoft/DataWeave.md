@@ -203,3 +203,27 @@ ns ns0 http://example.com/hello/
 }
 
 ```
+
+### function to split name into array with do variable
+```json
+{
+   "name": "Prashant, Kishore"
+}
+
+```
+```javascript
+%dw 2.0
+output application/json
+
+fun split(name) = name splitBy (',') map trim($) 
+---
+do {
+    var arr = split(payload.name)
+    ---
+    {
+        firstname: arr[0],
+        lastname: arr[1]
+    }
+}
+
+```
