@@ -37,6 +37,9 @@ $ show collections
 # drop collection
 $ db.<person>.drop()
 
+# drop current database
+# db.dropDatabase() 
+
 ```
 
 ## MongoDB CRUD operation on collection
@@ -74,6 +77,7 @@ $ db.person.remove("xxxxx")
 
 # delete document by name
 $ db.person.remove({"name":"Mike Jackson2"})
+
 ```
 
 ## MongoDB Query plans
