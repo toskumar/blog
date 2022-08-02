@@ -49,8 +49,19 @@ $ db.person.insert({"name":"Jackson", "age":20, "doj": "2010-10-01"})
 $ db.person.find()
 $ db.person.find().pretty()
 
+# limit number of documents
+$ db.person.find().limit(2)
+
+# sort the document by name ascending order
+$ db.person.find().sort({"name": 1})
+
+# sort the document by name descending order
+$ db.person.find().sort({"name": 1})
+
+
 # display document by object id
 $ db.person.find("xxxxx")
+
 
 # update document by id
 $ db.person.update({"_id": ObjectId("xxxxxx")}, {$set: {"name":"Mike Jackson1"}} )
@@ -63,4 +74,13 @@ $ db.person.remove("xxxxx")
 
 # delete document by name
 $ db.person.remove({"name":"Mike Jackson2"})
+```
+
+## MongoDB Query plans
+
+```
+$ db.person.find({"name": "Jackson"}).explain()
+
+$ db.person.find().explain("executionStats")
+
 ```
