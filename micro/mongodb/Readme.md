@@ -80,6 +80,22 @@ $ db.person.remove({"name":"Mike Jackson2"})
 
 ```
 
+## Create Indexes
+
+```
+# create ascending(1) or descending(-1) index for name field
+db.person.createIndex({name:1})
+
+# create ascending index and unique key for name field
+db.person.createIndex({name:1}, {unique:true})
+
+# get all indexes
+db.person.getIndexes()
+
+# drop an index by name
+db.person.dropIndex("name_1")
+```
+
 ## MongoDB Query plans
 
 ```
