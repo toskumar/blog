@@ -26,4 +26,6 @@
   
 - Docker
   - [Docker](./micro/docker)
-  
+ 
+- Terraform
+  - [Terraform](./micro/terraform)
