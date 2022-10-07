@@ -1,6 +1,6 @@
 ### Basic terraform 
 
-A basic terraform code which creates an ec2 instance in us-west-2 region on AWS cloud provider
+A basic terraform code which creates an ec2 instance in us-west-2 region in AWS cloud provider
 
 ```javascript
 terraform {
@@ -37,10 +37,10 @@ provider "aws" {
 
 resource "aws_instance" "app_server" {
   ami           = var.imageId
-  instance_type = "t2.micro"
+  instance_type = var.instanceType
 
   tags = {
-    Name = "AppServerInstance"
+    Name = "AppServer"
   }
 }
 
@@ -50,7 +50,7 @@ output "app_server_ip_addr" {
 
 ```
 
-Terraform code creates 2 sns topic in 2 region 
+Terraform code creates 2 sns topic in 2 aws region 
 
 ```javascript
 provider "aws" {
