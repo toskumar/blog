@@ -5,8 +5,9 @@
 
 A temporary password is generated for root@localhost: Ace2kddas
 
+### Start and change the root password
 ```sql
-$ start mysqld
+$ start mysqld --console
 $ mysql -u root -p
 Enter your temporary password
 
@@ -16,6 +17,11 @@ exit;
 
 $ mysql -u root -p
 pass123
+```
+
+### Stop database
+```sql
+$ mysqladmin shutdown -u root -p
 ```
 
 ```sql
