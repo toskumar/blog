@@ -13,9 +13,12 @@ PS> Get-ExecutionPolicy
 PS> Set-ExecutionPolicy AllSigned
 PS> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 PS> choco
+PS> choco upgrade chocolatey (Optional)
 
 ### Setup Terraform using choco package manager
 PS> choco install terraform
+PS> choco upgrade terraform (Optional)
+PS> terraform -v
 PS> terraform -help
 PS> choco install awscli
 PS> aws --version
